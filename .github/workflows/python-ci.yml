@@ -9,7 +9,12 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
+    env:
+      DB_HOST: localhost
+      DB_PORT: "5433"
+      DB_USER: admin
+      DB_PASSWORD: 1234
+      DB_NAME: smiles_db
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
