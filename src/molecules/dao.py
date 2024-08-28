@@ -1,5 +1,6 @@
 from fastapi import HTTPException, status
 from sqlalchemy import delete, update
+from typing import Optional 
 from sqlalchemy.future import select
 from sqlalchemy.exc import NoResultFound, IntegrityError
 from src.molecules.models import Molecule
@@ -14,11 +15,14 @@ class MoleculeDAO(BaseDAO):
     model = Molecule
 
     @classmethod
-    async def find_all_molecules(cls):
+    async def find_all_molecules(cls, limit: Optional[int] = None):
         async with async_session_maker() as session:
             query = select(cls.model)
-            molecules = await session.execute(query)
-            return molecules.scalars().all()
+            if limit:
+                query = query.limit(limit)
+            result = await session.execute(query)
+            for molecule in result.scalars():
+                yield molecule
 
     @classmethod
     async def add_molecule(cls, **molecule_data: dict):
@@ -38,7 +42,7 @@ class MoleculeDAO(BaseDAO):
                         detail="Molecule already exists"
                     )
                 else:
-                    raise
+                    raise e
             
     @classmethod
     async def find_full_data(cls, molecule_id: int):

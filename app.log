@@ -1,0 +1,12 @@
+2024-08-25 19:02:23,004 - src.molecules.router - INFO - Received request to retrieve all molecules
+2024-08-25 19:02:23,114 - src.molecules.router - INFO - Retrieved 7 molecules
+2024-08-27 16:42:53,004 - src.molecules.router - INFO - Received request for substructure search with SMILES: CCO
+2024-08-27 16:42:53,131 - src.molecules.router - INFO - Substructure search found 3 matches
+2024-08-27 16:57:57,283 - src.molecules.router - INFO - Received request to retrieve None molecules
+2024-08-27 16:58:07,892 - src.molecules.router - INFO - Received request to retrieve 3 molecules
+2024-08-27 16:58:51,325 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-08-27 16:58:58,937 - src.molecules.router - INFO - Received request to retrieve 5 molecules
+2024-08-27 17:01:24,926 - src.molecules.router - INFO - Received request to retrieve 4 molecules
+2024-08-27 17:01:25,016 - src.molecules.router - INFO - Molecules retrieved successfully
+2024-08-27 17:02:19,911 - src.molecules.router - INFO - Received request to retrieve 3 molecules
+2024-08-27 17:02:20,003 - src.molecules.router - INFO -  3 molecules retrieved successfully

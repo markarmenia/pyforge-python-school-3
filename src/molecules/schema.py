@@ -18,7 +18,6 @@ class MoleculeResponse(BaseModel):
             raise ValueError("This SMILES has an invalid structure")
         return value
 
-
 class MoleculeAdd(BaseModel):
     smiles: str = Field(
         ..., min_length=1, max_length=100, description="structure of chemical molecules"
