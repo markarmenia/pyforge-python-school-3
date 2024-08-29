@@ -45,16 +45,13 @@ async def get_molecule_by_id(molecule_id: int):
     **id**: Required
     '''
     logger.info(f"Received request to retrieve molecule with ID: {molecule_id}")
-    try:
-        rez = await MoleculeDAO.find_full_data(molecule_id=molecule_id)
-        if rez is None:
-            logger.warning(f"Molecule with ID {molecule_id} not found")
-            raise HTTPException(status_code=404, detail=f"Molecule with id {molecule_id} does not exist!")
-        logger.info(f"Molecule with ID {molecule_id} retrieved successfully")
-        return rez
-    except Exception as e:
-        logger.error(f"Unexpected error while retrieving molecule with ID {molecule_id}: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail="Error retrieving the molecule")
+    rez = await MoleculeDAO.find_full_data(molecule_id=molecule_id)
+    if rez is None:
+        logger.error(f"Molecule with ID {molecule_id} not found")
+        raise HTTPException(status_code=404, detail=f"Molecule with id {molecule_id} does not exist!")
+    logger.info(f"Molecule with ID {molecule_id} retrieved successfully")
+    return rez
+    
 
 # Updating a molecule by identifier
 @router.put("/molecules/{molecule_id}", tags=["Molecules"], summary="Update molecule by ID", response_model=MoleculeResponse)
@@ -95,17 +92,13 @@ async def delete_molecule(molecule_id: int) -> dict:
     **id**: Required
     '''
     logger.info(f"Received request to delete molecule with ID {molecule_id}")
-    try:
-        check = await MoleculeDAO.delete_molecule_by_id(molecule_id=molecule_id)
-        if check:
-            logger.info(f"Molecule with ID {molecule_id} deleted successfully")
-            return {"message": f"The molecule with id {molecule_id} is deleted!"}
-        else:
-            logger.warning(f"Molecule with ID {molecule_id} not found for deletion")
-            raise HTTPException(status_code=404, detail=f"Molecule with id {molecule_id} does not exist!")
-    except Exception as e:
-        logger.error(f"Unexpected error while deleting molecule with ID {molecule_id}: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail="Error deleting the molecule")
+    check = await MoleculeDAO.delete_molecule_by_id(molecule_id=molecule_id)
+    if check:
+        logger.info(f"Molecule with ID {molecule_id} deleted successfully")
+        return {"message": f"The molecule with id {molecule_id} is deleted!"}
+    else:
+        logger.error(f"Molecule with ID {molecule_id} not found for deletion")
+        raise HTTPException(status_code=404, detail=f"Molecule with id {molecule_id} does not exist!")
 
 # List all molecules
 @router.get("/molecules", tags=["Search"], summary="Retrieve all molecules", response_description="Molecules retrieved successfully")
@@ -140,13 +133,10 @@ async def substructure_search(smiles: str):
     try:
         matches = await MoleculeDAO.substructure_search(smiles)
         if not matches:
-            logger.warning("No matching molecules found for substructure search")
+            logger.error("No matching molecules found for substructure search")
             raise HTTPException(status_code=404, detail="No matching molecules found")
         logger.info(f"Substructure search found {len(matches)} matches")
         return matches
     except ValueError as e:
         logger.error(f"ValueError during substructure search: {e}")
         raise HTTPException(status_code=400, detail=str(e))
-    except Exception as e:
-        logger.error(f"Unexpected error during substructure search: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail="Error performing substructure search")
