@@ -4,10 +4,23 @@ from fastapi import APIRouter, HTTPException, Query
 from rdkit import Chem
 from src.molecules.dao import MoleculeDAO
 from src.molecules.schema import MoleculeResponse, MoleculeAdd, MoleculeUpdate
+from src.cache import redis_client
+from hashlib import sha256
+import json
 
 logger = logging.getLogger(__name__)
 
 router = APIRouter()
+
+def get_cache_key(*args, **kwargs) -> str:
+    key = json.dumps({"args": args, "kwargs": kwargs}, sort_keys=True)
+    return sha256(key.encode()).hexdigest()
+
+async def get_cache(redis_client, key: str):
+    return await redis_client.get(key)
+
+async def set_cache(redis_client, key: str, value: any, expiration: int):
+    await redis_client.setex(key, expiration, json.dumps(value))
 
 # Add molecule (smiles) and its identifier
 @router.post("/molecules", status_code=201, tags=["Molecules"], summary="Add new molecules to the DB", response_description="Molecule added successfully")
@@ -28,6 +41,7 @@ async def add_molecule(molecule: MoleculeAdd) -> dict:
     try:
         new_molecule_id = await MoleculeDAO.add_molecule(**molecule_data)
         logger.info(f"Molecule added successfully with ID: {new_molecule_id}")
+        # Invalidate the cache for lists or searches if needed
         return {"message": "The molecule is added!", "molecule": molecule}
     except HTTPException as e:
         logger.error(f"HTTPException occurred: {e.detail}")
@@ -39,19 +53,27 @@ async def add_molecule(molecule: MoleculeAdd) -> dict:
 # Get molecule by identifier
 @router.get("/molecules/{molecule_id}", tags=["Molecules"], summary="Retrieve molecule by ID", response_description="Molecule retrieved successfully")
 async def get_molecule_by_id(molecule_id: int):
-    '''
-    Get molecule by identifier:
+    redis_client_instance = await redis_client()
+    cache_key = get_cache_key("get_molecule_by_id", molecule_id=molecule_id)
+    cached_result = await get_cache(redis_client_instance, cache_key)
+    if cached_result:
+        logger.info(f"Cache hit for key: {cache_key}")
+        await redis_client_instance.aclose()
+        return json.loads(cached_result)
 
-    **id**: Required
-    '''
     logger.info(f"Received request to retrieve molecule with ID: {molecule_id}")
     rez = await MoleculeDAO.find_full_data(molecule_id=molecule_id)
     if rez is None:
         logger.error(f"Molecule with ID {molecule_id} not found")
+        await redis_client_instance.aclose()
         raise HTTPException(status_code=404, detail=f"Molecule with id {molecule_id} does not exist!")
+
+    # Convert Pydantic model to dict for serialization
+    rez_dict = rez.model_dump()
     logger.info(f"Molecule with ID {molecule_id} retrieved successfully")
-    return rez
-    
+    await set_cache(redis_client_instance, cache_key, rez_dict, expiration=300)
+    await redis_client_instance.aclose()
+    return rez_dict
 
 # Updating a molecule by identifier
 @router.put("/molecules/{molecule_id}", tags=["Molecules"], summary="Update molecule by ID", response_model=MoleculeResponse)
@@ -75,6 +97,7 @@ async def update_molecule(molecule_id: int, updated_molecule: MoleculeUpdate):
             logger.warning(f"Molecule with ID {molecule_id} not found for update")
             raise HTTPException(status_code=404, detail="Molecule not found")
         logger.info(f"Molecule with ID {molecule_id} updated successfully")
+        # Invalidate the cache for lists or searches if needed
         return updated
     except HTTPException as e:
         logger.error(f"HTTPException occurred during update: {e.detail}")
@@ -95,6 +118,7 @@ async def delete_molecule(molecule_id: int) -> dict:
     check = await MoleculeDAO.delete_molecule_by_id(molecule_id=molecule_id)
     if check:
         logger.info(f"Molecule with ID {molecule_id} deleted successfully")
+        # Invalidate cache entries related to this molecule
         return {"message": f"The molecule with id {molecule_id} is deleted!"}
     else:
         logger.error(f"Molecule with ID {molecule_id} not found for deletion")
@@ -103,24 +127,27 @@ async def delete_molecule(molecule_id: int) -> dict:
 # List all molecules
 @router.get("/molecules", tags=["Search"], summary="Retrieve all molecules", response_description="Molecules retrieved successfully")
 async def get_all(limit: Optional[int] = Query(None, description="Limit the number of molecules to retrieve")) -> List[MoleculeResponse]:
-    '''
-    List all molecules 
-    **Optional**: Limit the required number of molecules in the response. 
+    redis_client_instance = await redis_client()
+    cache_key = get_cache_key("get_all", limit=limit)
+    cached_results = await get_cache(redis_client_instance, cache_key)
+    if cached_results:
+        logger.info(f"Cache hit for key: {cache_key}")
+        return json.loads(cached_results)
 
-    '''
     if limit:
         logger.info(f"Received request to retrieve {limit} molecules")
     else:
         logger.info(f"Received request to retrieve ALL molecules")
+    
     try:
-        results= [molecule async for molecule in MoleculeDAO.find_all_molecules(limit)]
-        logger.info(f" {len(results)} molecules retrieved successfully")
+        results = await MoleculeDAO.find_all_molecules(limit)
+        logger.info(f"{len(results)} molecules retrieved successfully")
+        await set_cache(redis_client_instance, cache_key, results, expiration=300)
         return results
     except Exception as e:
         logger.error(f"Unexpected error during search: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail="Error performing search")
-
-
+    
 # Substructure search for all added molecules
 @router.get("/substructures", tags=["Search"], summary="Substructure search molecules", response_description="Substructure match molecules retrieved successfully")
 async def substructure_search(smiles: str):
@@ -130,12 +157,22 @@ async def substructure_search(smiles: str):
     **substructure**: SMILES molecule required
     '''
     logger.info(f"Received request for substructure search with SMILES: {smiles}")
+    redis_client_instance = await redis_client()
+    cache_key = get_cache_key("substructure_search", smiles=smiles)
+    cached_results = await get_cache(redis_client_instance, cache_key)
+    if cached_results:
+        logger.info(f"Cache hit for key: {cache_key}")
+        return json.loads(cached_results)
+
+    
     try:
         matches = await MoleculeDAO.substructure_search(smiles)
         if not matches:
-            logger.error("No matching molecules found for substructure search")
-            raise HTTPException(status_code=404, detail="No matching molecules found")
+            logger.info("Substructure search found no matches")
+            await set_cache(redis_client_instance, cache_key, {"message": "No results found"}, expiration=300)
+            return {"message": "No results found"}
         logger.info(f"Substructure search found {len(matches)} matches")
+        await set_cache(redis_client_instance, cache_key, matches, expiration=300)
         return matches
     except ValueError as e:
         logger.error(f"ValueError during substructure search: {e}")

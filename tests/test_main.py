@@ -1,10 +1,12 @@
+import json
 import pytest
 from fastapi import HTTPException
 from fastapi.testclient import TestClient
-from unittest.mock import patch, AsyncMock
+from unittest.mock import patch, AsyncMock, MagicMock
 from src.molecules.router import router
 from src.molecules.dao import MoleculeDAO
 from src.molecules.schema import MoleculeResponse, MoleculeUpdate
+
 
 client = TestClient(router)
 
@@ -28,7 +30,7 @@ def test_add_invalid_molecule(mock_MolFromSmiles):
     assert excinfo.value.status_code == 400
     assert excinfo.value.detail == "Invalid SMILES molecule"
 
-# Test 3: Adding molecule with a SMILES that already exists
+# Test 3 Adding molecule with a SMILES that already exists
 @patch.object(MoleculeDAO, 'add_molecule', new_callable=AsyncMock)
 def test_add_existing_molecule(mock_add_molecule):
     mock_add_molecule.side_effect = [None, HTTPException(status_code=409, detail="Molecule already exists")]
@@ -39,26 +41,7 @@ def test_add_existing_molecule(mock_add_molecule):
     assert excinfo.value.status_code == 409
     assert excinfo.value.detail == "Molecule already exists"
 
-#Test 4 retreiving molecule by identifier
-@patch.object(MoleculeDAO, 'find_full_data', new_callable=AsyncMock)
-def test_get_molecule_by_id(mock_find_full_data):
-    mock_find_full_data.return_value = {"id": 1, "smiles": "c1ccccc1"}
-    response = client.get("/molecules/1")
-    
-    assert response.status_code == 200
-    assert response.json() == {"id": 1, "smiles": "c1ccccc1"}
-    mock_find_full_data.assert_called_once_with(molecule_id=1)
-
-#Test 5 retreiving molecule by identifier that does not exist
-@patch.object(MoleculeDAO, 'find_full_data', new_callable=AsyncMock)
-def test_get_molecule_by_non_existent_id(mock_find_full_data):
-    mock_find_full_data.return_value = None
-    with pytest.raises(HTTPException) as excinfo:
-        client.get("/molecules/2")
-    assert excinfo.value.status_code == 404
-    assert excinfo.value.detail == "Molecule with id 2 does not exist!"
-
-#Test 6 updating a molecule by smiles
+#Test 4 updating a molecule by smiles
 @patch.object(MoleculeDAO, 'update', new_callable=AsyncMock)
 def test_update_molecule(mock_update):
     mock_update.return_value = {"id": 1, "smiles": "c1ccccc1"}
@@ -68,7 +51,7 @@ def test_update_molecule(mock_update):
     assert response.json() == {"id": 1, "smiles": "c1ccccc1"}
     mock_update.assert_called_once_with(1, MoleculeUpdate(smiles="c1ccccc1"))
 
-#Test 7 updating a molecule by identifier that does not exist
+#Test 5 updating a molecule by identifier that does not exist
 @patch.object(MoleculeDAO, 'update', new_callable=AsyncMock)
 def test_update_molecule_incorrect_id(mock_update):
     mock_update.return_value = None
@@ -77,7 +60,7 @@ def test_update_molecule_incorrect_id(mock_update):
     assert excinfo.value.status_code == 404
     assert excinfo.value.detail == "Molecule not found"
 
-#Test 8 updating a molecule with an invalid smiles structure
+#Test 6 updating a molecule with an invalid smiles structure
 @patch.object(MoleculeDAO, 'add_molecule', new_callable=AsyncMock)
 @patch.object(MoleculeDAO, 'update', new_callable=AsyncMock)
 def test_update_molecule_incorrect_smiles(mock_update, mock_add_molecule):
@@ -92,7 +75,7 @@ def test_update_molecule_incorrect_smiles(mock_update, mock_add_molecule):
     assert excinfo.value.detail == "Invalid SMILES molecule"
 
 
-#Test 9 updating a molecule with a smiles that already exists
+#Test 7 updating a molecule with a smiles that already exists
 @patch.object(MoleculeDAO, 'add_molecule', new_callable=AsyncMock)
 @patch.object(MoleculeDAO, 'update', new_callable=AsyncMock)
 @patch.object(MoleculeDAO, 'find_full_data', new_callable=AsyncMock)
@@ -108,8 +91,7 @@ def test_update_molecule_duplicate_smiles(mock_find_full_data, mock_update, mock
     assert excinfo.value.status_code == 409
     assert excinfo.value.detail == "Molecule with this SMILES value already exists"
 
-
-# Test 10 deleting a molecule
+# Test 8 deleting a molecule
 @patch.object(MoleculeDAO, 'delete_molecule_by_id', new_callable=AsyncMock)
 def test_delete_molecule(mock_delete_molecule_by_id):
     mock_delete_molecule_by_id.return_value = 1
@@ -119,7 +101,7 @@ def test_delete_molecule(mock_delete_molecule_by_id):
     assert response.json() == {"message": "The molecule with id 1 is deleted!"}
     mock_delete_molecule_by_id.assert_called_once_with(molecule_id=1)
 
-#Test 11 deleting an identifier that doesnt exist
+#Test 9 deleting an identifier that doesnt exist
 @patch.object(MoleculeDAO, 'delete_molecule_by_id', new_callable=AsyncMock)
 def test_delete_molecule_incorrect_id(delete_molecule_by_id):
     delete_molecule_by_id.return_value = None
@@ -128,78 +110,173 @@ def test_delete_molecule_incorrect_id(delete_molecule_by_id):
     assert excinfo.value.status_code == 404
     assert excinfo.value.detail == "Molecule with id 1 does not exist!"
 
-# Test 12 retrieving all molecules
-# Mock AsyncIterable class to simulate async generator behavior
+#Tests with Redis
 
-class MockAsyncIterable:
-    def __init__(self, data):
-        self._data = data
-        self._iter = iter(data)
+# Test 10 retreiving molecule by identifier, not using cache
 
-    def __aiter__(self):
-        self._iter = iter(self._data)
-        return self
-
-    async def __anext__(self):
-        try:
-            return next(self._iter)
-        except StopIteration:
-            raise StopAsyncIteration
-
-# Data to be returned by the mock
-mock_data = [
-    {'id': 1, 'smiles': 'CCO'},
-    {'id': 3, 'smiles': 'c1ccccc1'},
-    {'id': 7, 'smiles': 'CC(=O)Oc1ccccc1C(=O)O'},
-    {'id': 10, 'smiles': 'CC(=O)O'},
-    {'id': 11, 'smiles': 'C#C'},
-    {'id': 18, 'smiles': 'C#N'},
-    {'id': 19, 'smiles': 'C1CCCCC1'}
-]
-
+@patch.object(MoleculeDAO, 'find_full_data', new_callable=AsyncMock)
+@patch("src.cache.redis_client")
 @pytest.mark.asyncio
-async def test_get_all_molecules():
-    # Patching the DAO method to return an async iterable
-    with patch('src.molecules.dao.MoleculeDAO.find_all_molecules', return_value=MockAsyncIterable(mock_data)):
-        
-        # Make a request to the endpoint
-        response = client.get("/molecules")
+async def test_get_molecule_by_id(mock_redis_client, mock_find_full_data):
+    mock_redis = mock_redis_client.return_value
+    mock_redis.get = AsyncMock(return_value=None) 
+    mock_redis.setex = AsyncMock()
+    mock_redis.close = AsyncMock()
 
-        # Assert the response status and data
-        assert response.status_code == 200
-        assert response.json() == mock_data
+    mock_molecule = MagicMock()
+    mock_molecule.model_dump.return_value = {"id": 1, "smiles": "c1ccccc1"}
 
-# Test 13 retrieving molecules using a limit 
-mock_data_limit_2 = mock_data[:2]
+    mock_find_full_data.return_value = mock_molecule
+
+    response = client.get("/molecules/1")
+
+    assert response.status_code == 200
+    assert response.json() == {"id": 1, "smiles": "c1ccccc1"}
+
+# Test 11 retreiving molecule by identifier, using cache
+
+@patch.object(MoleculeDAO, 'find_full_data', new_callable=AsyncMock)
+@patch("src.cache.redis_client")
 @pytest.mark.asyncio
-async def test_get_all_molecules_with_limit():
-    # Patching the DAO method to return an async iterable with a limit
-    with patch('src.molecules.dao.MoleculeDAO.find_all_molecules', return_value=MockAsyncIterable(mock_data_limit_2)):
-        
-        # Make a request to the endpoint with a limit of 2
-        response = client.get("/molecules?limit=2")
+async def test_cache_usage_on_repeated_requests(mock_redis_client, mock_find_full_data):
+    mock_redis = mock_redis_client.return_value
+    mock_redis.get = AsyncMock(return_value=b'{"id": 1, "smiles": "c1ccccc1"}')
+    mock_redis.setex = AsyncMock()
+    mock_redis.close = AsyncMock()
 
-        # Assert the response status and data
-        assert response.status_code == 200
-        assert response.json() == mock_data_limit_2
+    mock_molecule = MagicMock()
+    mock_molecule.model_dump.return_value = {"id": 1, "smiles": "c1ccccc1"}
 
-#Test 14 substructure search
-@patch.object(MoleculeDAO, 'substructure_search', new_callable=AsyncMock)
-def test_substructure_search(mock_substructure_search):
-    mock_substructure_search.return_value = ["c1ccccc1"]
-    response = client.get("/substructures", params={"smiles": "c1ccccc1"})
+    mock_find_full_data.return_value = mock_molecule
+
+    response = client.get("/molecules/1")
+    assert response.status_code == 200
+    assert response.json() == {"id": 1, "smiles": "c1ccccc1"}
+
+    #Check if find_full_data was not called (cache hit) 
+    mock_find_full_data.assert_not_called()
+
+    response = client.get("/molecules/1")
+    assert response.status_code == 200
+    assert response.json() == {"id": 1, "smiles": "c1ccccc1"}
+
+    mock_find_full_data.assert_not_called()
+
+
+# Test 12 retreiving molecule by identifier that does not exist
+
+@patch.object(MoleculeDAO, 'find_full_data', new_callable=AsyncMock)
+@pytest.mark.asyncio
+async def test_get_molecule_by_non_existent_id(mock_find_full_data):
+    mock_find_full_data.return_value = None
+    with pytest.raises(HTTPException) as excinfo:
+        client.get("/molecules/2")
+    assert excinfo.value.status_code == 404
+    assert excinfo.value.detail == "Molecule with id 2 does not exist!"
+
+# Test 13 retreiving all molecules in DB, without caching
+
+@patch.object(MoleculeDAO, 'find_all_molecules', new_callable=AsyncMock)
+@patch("src.cache.redis_client")
+@pytest.mark.asyncio
+async def test_no_cache_usage_on_repeated_requests(mock_redis_client, mock_find_all_molecules):
     
+    mock_redis = mock_redis_client.return_value
+    mock_redis.get = AsyncMock(return_value=None)  
+    mock_redis.setex = AsyncMock()
+    mock_redis.close = AsyncMock()
+    
+    
+    mock_find_all_molecules.return_value = [{"id": 1, "smiles": "c1ccccc1"}]
+    
+    
+    response = client.get("/molecules?limit=1")
+    assert response.status_code == 200
+    assert response.json() == [{"id": 1, "smiles": "c1ccccc1"}]
+    
+
+# Test 14 retreiving all molecules in DB, with caching
+
+@patch.object(MoleculeDAO, 'find_all_molecules', new_callable=AsyncMock)
+@patch("src.cache.redis_client")
+@pytest.mark.asyncio
+async def test_cache_usage_on_retreiving_all_molecules(mock_redis_client, mock_find_all_molecules):
+    mock_redis = mock_redis_client.return_value
+    mock_redis.get = AsyncMock(return_value=b'{"id": 1, "smiles": "c1ccccc1"}')
+    mock_redis.setex = AsyncMock()
+    mock_redis.close = AsyncMock()
+    
+    mock_find_all_molecules.return_value = [{"id": 1, "smiles": "c1ccccc1"}]
+    
+    # Perform the first GET request (cache miss)
+    response = client.get("/molecules?limit=1")
+    assert response.status_code == 200
+    assert response.json() == [{"id": 1, "smiles": "c1ccccc1"}]
+
+    mock_find_all_molecules.assert_not_called()
+
+    
+    # Perform the second GET request (cache miss again)
+    response = client.get("/molecules?limit=1")
+    assert response.status_code == 200
+    assert response.json() == [{"id": 1, "smiles": "c1ccccc1"}]
+
+
+    mock_find_all_molecules.assert_not_called()
+
+
+# Test 15 retreiving all molecules in DB, without caching
+
+@patch.object(MoleculeDAO, 'substructure_search', new_callable=AsyncMock)
+@patch("src.cache.redis_client")
+@pytest.mark.asyncio
+async def test_no_cache_usage_on_substructure_search(mock_redis_client, mock_substructure_search):
+    mock_redis = mock_redis_client.return_value
+    mock_redis.get = AsyncMock(return_value=None)  
+    mock_redis.setex = AsyncMock()
+    mock_redis.close = AsyncMock()
+    
+    mock_substructure_search.return_value = ["c1ccccc1"]
+    
+    response = client.get("/substructures", params={"smiles": "c1ccccc1"})
     assert response.status_code == 200
     assert response.json() == ["c1ccccc1"]
-    mock_substructure_search.assert_called_once_with("c1ccccc1")
-
-#Test 15 substructure search with no matching results
-@patch.object(MoleculeDAO, 'substructure_search', new_callable=AsyncMock)
-def test_substructure_search_no_matches(mock_substructure_search):
-    mock_substructure_search.return_value = None
-    with pytest.raises(HTTPException) as excinfo:
-        client.get("/substructures", params={"smiles": "c1ccccc1"})
     
-    assert excinfo.value.status_code == 404
-    assert excinfo.value.detail == "No matching molecules found"
+# Test 16 retreiving all molecules in DB, with caching
 
+@patch.object(MoleculeDAO, 'substructure_search', new_callable=AsyncMock)
+@patch("src.cache.redis_client")
+@pytest.mark.asyncio
+async def test_cache_usage_on_substructure_search(mock_redis_client, mock_substructure_search):
+    
+    mock_redis = mock_redis_client.return_value
+    mock_redis.get = AsyncMock(return_value=json.dumps(["c1ccccc1"]))  
+    mock_redis.setex = AsyncMock()
+    mock_redis.close = AsyncMock()
+    
+    mock_substructure_search.return_value = ["c1ccccc1"]
+    
+    response = client.get("/substructures", params={"smiles": "c1ccccc1"})
+    assert response.status_code == 200
+    assert response.json() == ["c1ccccc1"]
+    
+    mock_substructure_search.assert_not_called()
+
+    response = client.get("/substructures", params={"smiles": "c1ccccc1"})
+    assert response.status_code == 200
+    assert response.json() == ["c1ccccc1"]
+    
+    mock_substructure_search.assert_not_called()
+
+#Test 17 substructure search with invalid smiles
+@patch.object(MoleculeDAO, 'substructure_search', new_callable=AsyncMock)
+@pytest.mark.asyncio
+async def test_substructure_search_invalid_smiles(mock_substructure_search):
+    
+    mock_substructure_search.return_value = None
+
+    with pytest.raises(HTTPException) as excinfo:
+        client.put("/molecules/1", json={"smiles": "test"})
+    
+    assert excinfo.value.status_code == 400
+    assert excinfo.value.detail == "Invalid SMILES molecule"

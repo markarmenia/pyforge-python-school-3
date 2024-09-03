@@ -22,3 +22,119 @@
 2024-08-28 15:58:45,958 - src.molecules.router - INFO -  7 molecules retrieved successfully
 2024-08-29 13:18:49,858 - src.molecules.router - INFO - Received request to retrieve ALL molecules
 2024-08-29 13:18:49,966 - src.molecules.router - INFO -  7 molecules retrieved successfully
+2024-08-31 15:07:29,651 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-08-31 15:07:29,757 - src.molecules.router - INFO - 7 molecules retrieved successfully
+2024-08-31 15:07:29,757 - src.molecules.router - ERROR - Unexpected error during search: Object of type Molecule is not JSON serializable
+Traceback (most recent call last):
+  File "/Users/nshanyeghyan/Desktop/pyforge-python-school-3/src/molecules/router.py", line 143, in get_all
+    await set_cache(redis_client_instance, cache_key, results, expiration=300)
+  File "/Users/nshanyeghyan/Desktop/pyforge-python-school-3/src/molecules/router.py", line 23, in set_cache
+    await redis_client.setex(key, expiration, json.dumps(value))
+                                              ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Molecule is not JSON serializable
+2024-08-31 15:07:43,858 - src.molecules.router - INFO - Received request for substructure search with SMILES: CCO
+2024-08-31 15:07:43,873 - src.molecules.router - INFO - Substructure search found 3 matches
+2024-08-31 15:07:52,825 - src.molecules.router - INFO - Cache hit for key: 80f7937727f328986b5bd57af458a848f333cee85377612761ac1dcb1eb8bedc
+2024-08-31 15:08:01,235 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 1
+2024-08-31 15:08:01,252 - src.molecules.router - INFO - Molecule with ID 1 retrieved successfully
+2024-08-31 15:08:03,896 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 2
+2024-08-31 15:08:03,902 - src.molecules.router - ERROR - Molecule with ID 2 not found
+2024-08-31 15:08:07,374 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 3
+2024-08-31 15:08:07,377 - src.molecules.router - INFO - Molecule with ID 3 retrieved successfully
+2024-08-31 15:08:10,589 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 1
+2024-08-31 15:08:10,594 - src.molecules.router - INFO - Molecule with ID 1 retrieved successfully
+2024-08-31 15:08:33,200 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-08-31 15:08:33,280 - src.molecules.router - INFO - 7 molecules retrieved successfully
+2024-08-31 15:08:33,280 - src.molecules.router - ERROR - Unexpected error during search: Object of type Molecule is not JSON serializable
+Traceback (most recent call last):
+  File "/Users/nshanyeghyan/Desktop/pyforge-python-school-3/src/molecules/router.py", line 143, in get_all
+    await set_cache(redis_client_instance, cache_key, results, expiration=300)
+  File "/Users/nshanyeghyan/Desktop/pyforge-python-school-3/src/molecules/router.py", line 23, in set_cache
+    await redis_client.setex(key, expiration, json.dumps(value))
+                                              ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Molecule is not JSON serializable
+2024-08-31 15:12:16,112 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-08-31 15:12:16,195 - src.molecules.router - INFO - 7 molecules retrieved successfully
+2024-08-31 15:12:25,716 - src.molecules.router - INFO - Received request to retrieve 3 molecules
+2024-08-31 15:12:25,724 - src.molecules.router - INFO - 3 molecules retrieved successfully
+2024-08-31 15:13:46,230 - src.molecules.router - INFO - Cache hit for key: a71578871fe61b9fa9ca097ed9ed512b8c7cc00ec8581f1c9c9032fed58455cd
+2024-08-31 15:14:28,051 - src.molecules.router - INFO - Received request for substructure search with SMILES: CCO
+2024-08-31 15:14:28,139 - src.molecules.router - INFO - Substructure search found 3 matches
+2024-08-31 15:14:42,606 - src.molecules.router - INFO - Cache hit for key: 80f7937727f328986b5bd57af458a848f333cee85377612761ac1dcb1eb8bedc
+2024-08-31 15:14:55,534 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 1
+2024-08-31 15:14:55,558 - src.molecules.router - INFO - Molecule with ID 1 retrieved successfully
+2024-08-31 15:17:14,615 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 1
+2024-08-31 15:17:14,714 - src.molecules.router - INFO - Molecule with ID 1 retrieved successfully
+2024-08-31 15:17:17,691 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 2
+2024-08-31 15:17:17,696 - src.molecules.router - ERROR - Molecule with ID 2 not found
+2024-08-31 15:17:30,439 - src.molecules.router - INFO - Cache hit for key: 2f650fd67eaf89e749e06098b49fc3ce5a591a8b55329cc9be1a1a875bf30925
+2024-08-31 15:21:05,233 - src.molecules.router - INFO - Cache hit for key: 2f650fd67eaf89e749e06098b49fc3ce5a591a8b55329cc9be1a1a875bf30925
+2024-08-31 15:21:08,162 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 2
+2024-08-31 15:21:08,241 - src.molecules.router - ERROR - Molecule with ID 2 not found
+2024-08-31 15:21:13,903 - src.molecules.router - INFO - Cache hit for key: 2f650fd67eaf89e749e06098b49fc3ce5a591a8b55329cc9be1a1a875bf30925
+2024-09-03 16:51:53,253 - src.molecules.router - INFO - Received request for substructure search with SMILES: CCO
+2024-09-03 16:51:53,378 - src.molecules.router - INFO - Substructure search found 3 matches
+2024-09-03 16:52:02,432 - src.molecules.router - INFO - Received request for substructure search with SMILES: test
+2024-09-03 16:52:02,433 - src.molecules.router - ERROR - ValueError during substructure search: Invalid SMILES molecule
+2024-09-03 16:52:41,409 - src.molecules.router - INFO - Received request for substructure search with SMILES: [C-]#N
+2024-09-03 16:52:58,859 - src.molecules.router - INFO - Cache hit for key: 80f7937727f328986b5bd57af458a848f333cee85377612761ac1dcb1eb8bedc
+2024-09-03 17:00:22,559 - src.molecules.router - INFO - Received request for substructure search with SMILES: CCO
+2024-09-03 17:00:22,667 - src.molecules.router - INFO - Substructure search found 3 matches
+2024-09-03 17:00:52,836 - src.molecules.router - INFO - Cache hit for key: 80f7937727f328986b5bd57af458a848f333cee85377612761ac1dcb1eb8bedc
+2024-09-03 17:02:05,878 - src.molecules.router - INFO - Received request for substructure search with SMILES: [C-]#N
+2024-09-03 17:02:05,903 - src.molecules.router - INFO - Substructure search found no matches
+2024-09-03 17:02:11,811 - src.molecules.router - INFO - Cache hit for key: a4f40911d878f0159d3b9e9985e0e556bd051008b152dd0be302d36ec3ccf87d
+2024-09-03 17:02:27,926 - src.molecules.router - INFO - Received request for substructure search with SMILES: C
+2024-09-03 17:02:27,938 - src.molecules.router - INFO - Substructure search found 7 matches
+2024-09-03 17:02:37,183 - src.molecules.router - INFO - Cache hit for key: e499897940ab5b24536ad14a2b53b2f0b97770201d81e10e983c38c32c7d8680
+2024-09-03 17:03:46,374 - src.molecules.router - INFO - Cache hit for key: e499897940ab5b24536ad14a2b53b2f0b97770201d81e10e983c38c32c7d8680
+2024-09-03 17:07:29,158 - src.molecules.router - INFO - Received request for substructure search with SMILES: CCO
+2024-09-03 17:07:29,245 - src.molecules.router - INFO - Substructure search found 3 matches
+2024-09-03 17:08:51,791 - src.molecules.router - INFO - Received request to add molecule with SMILES: C#N
+2024-09-03 17:08:51,835 - src.molecules.router - ERROR - HTTPException occurred: Molecule already exists
+2024-09-03 17:09:02,544 - src.molecules.router - INFO - Received request to add molecule with SMILES: CC(C)CO
+2024-09-03 17:09:02,566 - src.molecules.router - INFO - Molecule added successfully with ID: 24
+2024-09-03 17:09:14,552 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-03 17:09:14,559 - src.molecules.router - INFO - 8 molecules retrieved successfully
+2024-09-03 17:14:05,803 - src.molecules.router - INFO - Received request to add molecule with SMILES: CN=C=O
+2024-09-03 17:14:05,841 - src.molecules.router - INFO - Molecule added successfully with ID: 25
+2024-09-03 17:14:14,828 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 22
+2024-09-03 17:14:14,843 - src.molecules.router - ERROR - Molecule with ID 22 not found
+2024-09-03 17:14:18,522 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 21
+2024-09-03 17:14:18,530 - src.molecules.router - ERROR - Molecule with ID 21 not found
+2024-09-03 17:14:22,482 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 19
+2024-09-03 17:14:22,487 - src.molecules.router - INFO - Molecule with ID 19 retrieved successfully
+2024-09-03 17:14:32,436 - src.molecules.router - INFO - Received request to delete molecule with ID 19
+2024-09-03 17:14:32,450 - src.molecules.router - INFO - Molecule with ID 19 deleted successfully
+2024-09-03 17:14:36,461 - src.molecules.router - INFO - Received request to delete molecule with ID 199
+2024-09-03 17:14:36,468 - src.molecules.router - ERROR - Molecule with ID 199 not found for deletion
+2024-09-03 17:14:50,929 - src.molecules.router - INFO - Received request to update molecule with ID 1 with new data: CCC(=O)O
+2024-09-03 17:14:50,950 - src.molecules.router - INFO - Molecule with ID 1 updated successfully
+2024-09-03 17:15:01,888 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-03 17:15:01,902 - src.molecules.router - INFO - 8 molecules retrieved successfully
+2024-09-03 17:15:09,702 - src.molecules.router - INFO - Received request to retrieve 3 molecules
+2024-09-03 17:15:09,709 - src.molecules.router - INFO - 3 molecules retrieved successfully
+2024-09-03 17:15:17,665 - src.molecules.router - INFO - Received request for substructure search with SMILES: CCC(=O)O
+2024-09-03 17:15:17,708 - src.molecules.router - INFO - Substructure search found 1 matches

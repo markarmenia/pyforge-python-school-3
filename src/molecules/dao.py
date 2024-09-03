@@ -21,8 +21,8 @@ class MoleculeDAO(BaseDAO):
             if limit:
                 query = query.limit(limit)
             result = await session.execute(query)
-            for molecule in result.scalars():
-                yield molecule
+            molecules = result.scalars().all()
+            return [molecule.to_dict() for molecule in molecules]
 
     @classmethod
     async def add_molecule(cls, **molecule_data: dict):

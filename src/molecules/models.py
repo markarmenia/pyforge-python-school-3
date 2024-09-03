@@ -14,4 +14,9 @@ class Molecule(Base):
 
     def __repr__(self):
         return str(self)
-
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'smiles': self.smiles
+        }
