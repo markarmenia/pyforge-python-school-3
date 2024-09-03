@@ -15,7 +15,7 @@ jobs:
       DB_USER: admin
       DB_PASSWORD: 1234
       DB_NAME: smiles_db
-      REDIS_HOST: "redis"
+      REDIS_HOST: localhost
       REDIS_PORT: "6379"
     steps:
       - uses: actions/checkout@v4
