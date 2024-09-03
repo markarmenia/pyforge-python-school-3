@@ -225,7 +225,7 @@ async def test_cache_usage_on_retreiving_all_molecules(mock_redis_client, mock_f
     mock_find_all_molecules.assert_not_called()
 
 
-# Test 15 retreiving all molecules in DB, without caching
+# Test 15 substructure_search in DB, without caching
 
 @patch.object(MoleculeDAO, 'substructure_search', new_callable=AsyncMock)
 @patch("src.cache.redis_client")
@@ -242,7 +242,7 @@ async def test_no_cache_usage_on_substructure_search(mock_redis_client, mock_sub
     assert response.status_code == 200
     assert response.json() == ["c1ccccc1"]
     
-# Test 16 retreiving all molecules in DB, with caching
+# Test 16 substructure_search in DB, with caching
 
 @patch.object(MoleculeDAO, 'substructure_search', new_callable=AsyncMock)
 @patch("src.cache.redis_client")
