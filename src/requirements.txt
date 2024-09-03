@@ -10,3 +10,4 @@ sqlalchemy
 alembic
 asyncpg
 psycopg2-binary
+redis
