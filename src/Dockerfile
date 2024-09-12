@@ -1,14 +1,15 @@
 FROM continuumio/miniconda3
 
-WORKDIR /app
+WORKDIR /src
 
 RUN pip install rdkit
 
 COPY requirements.txt .
-
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
+
+ENV PYTHONPATH=/src
 
 EXPOSE 8000
 

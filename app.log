@@ -138,3 +138,538 @@ TypeError: Object of type Molecule is not JSON serializable
 2024-09-03 17:15:09,709 - src.molecules.router - INFO - 3 molecules retrieved successfully
 2024-09-03 17:15:17,665 - src.molecules.router - INFO - Received request for substructure search with SMILES: CCC(=O)O
 2024-09-03 17:15:17,708 - src.molecules.router - INFO - Substructure search found 1 matches
+2024-09-10 14:46:02,981 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 14:46:03,087 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-10 14:46:03,089 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-10 14:46:04,099 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-10 14:46:05,107 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-10 14:46:06,115 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-10 14:46:07,123 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-10 14:46:08,129 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-10 14:46:09,137 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-10 14:46:10,144 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-10 14:46:11,150 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-10 14:46:12,156 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-10 14:46:13,163 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-10 14:46:14,170 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-10 14:46:15,178 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-10 14:46:16,192 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-10 14:46:17,205 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-10 14:46:18,210 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-10 14:46:19,220 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-10 14:46:20,230 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-10 14:46:21,239 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-10 14:46:22,247 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-10 14:46:22,248 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-10 14:47:03,106 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 14:47:03,129 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-10 14:47:03,133 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-10 14:47:04,141 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-10 14:47:05,146 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-10 14:47:06,155 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-10 14:47:07,161 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-10 14:47:08,167 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-10 14:47:09,174 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-10 14:47:10,184 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-10 14:47:11,188 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-10 14:47:12,197 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-10 14:47:13,203 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-10 14:47:14,209 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-10 14:47:15,217 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-10 14:47:16,227 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-10 14:47:17,235 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-10 14:47:18,243 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-10 14:47:19,250 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-10 14:47:20,260 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-10 14:47:21,270 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-10 14:47:22,277 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-10 14:47:22,278 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-10 14:48:53,670 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 14:48:53,730 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-10 14:48:53,732 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-10 14:48:54,741 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-10 14:48:55,747 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-10 14:48:56,756 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-10 14:48:57,762 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-10 14:48:58,771 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-10 14:48:59,780 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-10 14:49:00,790 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-10 14:49:01,794 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-10 14:49:02,802 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-10 14:49:03,812 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-10 14:49:04,817 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-10 14:49:05,822 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-10 14:49:06,833 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-10 14:49:07,840 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-10 14:49:08,846 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-10 14:49:09,855 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-10 14:49:10,860 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-10 14:49:11,869 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-10 14:49:12,876 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-10 14:49:12,878 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-10 14:58:58,113 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-10 14:58:58,235 - src.molecules.router - INFO - 8 molecules retrieved successfully
+2024-09-10 14:59:02,235 - src.molecules.router - INFO - Received request to retrieve 4 molecules
+2024-09-10 14:59:02,245 - src.molecules.router - INFO - 4 molecules retrieved successfully
+2024-09-10 14:59:12,078 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 3
+2024-09-10 14:59:12,106 - src.molecules.router - INFO - Molecule with ID 3 retrieved successfully
+2024-09-10 14:59:21,491 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 14:59:21,547 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-10 14:59:21,549 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-10 14:59:22,556 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-10 14:59:23,564 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-10 14:59:24,571 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-10 14:59:25,581 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-10 14:59:26,590 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-10 14:59:27,599 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-10 14:59:28,608 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-10 14:59:29,615 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-10 14:59:30,625 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-10 14:59:31,631 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-10 14:59:32,639 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-10 14:59:33,646 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-10 14:59:34,654 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-10 14:59:35,662 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-10 14:59:36,671 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-10 14:59:37,681 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-10 14:59:38,686 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-10 14:59:39,696 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-10 14:59:40,706 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-10 14:59:40,708 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-10 15:01:04,461 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 15:01:04,508 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-10 15:01:04,524 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-10 15:01:05,532 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-10 15:01:06,538 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-10 15:01:07,543 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-10 15:01:08,552 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-10 15:01:09,560 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-10 15:01:10,564 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-10 15:01:11,568 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-10 15:01:12,576 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-10 15:01:13,580 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-10 15:01:14,585 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-10 15:01:15,591 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-10 15:01:16,598 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-10 15:01:17,604 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-10 15:01:18,613 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-10 15:01:19,622 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-10 15:01:20,631 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-10 15:01:21,639 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-10 15:01:22,647 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-10 15:01:23,656 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-10 15:01:23,659 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-10 15:03:53,370 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 15:03:53,407 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-10 15:03:53,410 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-10 15:03:54,418 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-10 15:03:55,426 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-10 15:03:56,435 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-10 15:03:57,444 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-10 15:03:58,452 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-10 15:03:59,459 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-10 15:04:00,466 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-10 15:04:01,475 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-10 15:04:02,482 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-10 15:04:03,488 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-10 15:04:04,498 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-10 15:04:05,507 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-10 15:04:06,516 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-10 15:04:07,521 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-10 15:04:08,526 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-10 15:04:09,533 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-10 15:04:10,538 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-10 15:04:11,547 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-10 15:04:12,556 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-10 15:04:12,558 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-10 15:07:31,954 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-10 15:07:32,046 - src.molecules.router - INFO - 8 molecules retrieved successfully
+2024-09-10 15:07:36,573 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 15:07:36,635 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-10 15:07:36,637 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-10 15:07:37,641 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-10 15:07:38,648 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-10 15:07:39,654 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-10 15:07:40,665 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-10 15:07:41,675 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-10 15:07:42,682 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-10 15:07:43,686 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-10 15:07:44,692 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-10 15:07:45,698 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-10 15:07:46,706 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-10 15:07:47,712 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-10 15:07:48,721 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-10 15:07:49,730 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-10 15:07:50,738 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-10 15:07:51,746 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-10 15:07:52,755 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-10 15:07:53,761 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-10 15:07:54,771 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-10 15:07:55,779 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-10 15:07:55,780 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-10 15:14:11,719 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 15:14:11,784 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-10 15:14:11,786 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-10 15:14:12,792 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-10 15:14:13,805 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-10 15:14:14,817 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-10 15:14:15,822 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-10 15:14:16,832 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-10 15:14:17,842 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-10 15:14:18,852 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-10 15:14:19,857 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-10 15:14:20,866 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-10 15:14:21,873 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-10 15:14:22,881 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-10 15:14:23,887 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-10 15:14:24,891 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-10 15:14:25,896 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-10 15:14:26,904 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-10 15:14:27,911 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-10 15:14:28,920 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-10 15:14:29,930 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-10 15:14:30,939 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-10 15:14:30,941 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-10 15:19:12,725 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 15:19:12,790 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-10 15:19:12,792 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-10 15:19:13,801 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-10 15:19:14,811 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-10 15:19:15,817 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-10 15:19:16,823 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-10 15:19:17,833 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-10 15:19:18,842 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-10 15:19:19,852 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-10 15:19:20,861 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-10 15:19:21,871 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-10 15:19:22,881 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-10 15:19:23,889 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-10 15:19:24,896 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-10 15:19:25,906 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-10 15:19:26,913 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-10 15:19:27,920 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-10 15:19:28,931 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-10 15:19:29,937 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-10 15:19:30,947 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-10 15:19:31,956 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-10 15:19:31,958 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-10 15:43:48,100 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 15:43:48,215 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-10 15:43:48,218 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-10 15:43:49,228 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-10 15:43:50,236 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-10 15:43:51,246 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-10 15:43:52,256 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-10 15:43:53,265 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-10 15:43:54,275 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-10 15:43:55,285 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-10 15:43:56,294 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-10 15:43:57,304 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-10 15:43:58,310 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-10 15:43:59,319 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-10 15:44:00,326 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-10 15:44:01,330 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-10 15:44:02,340 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-10 15:44:03,350 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-10 15:44:04,358 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-10 15:44:05,366 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-10 15:44:06,375 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-10 15:44:07,386 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-10 15:44:07,388 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-10 17:07:31,210 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 17:07:31,277 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-10 17:07:31,280 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-10 17:07:32,289 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-10 17:07:33,294 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-10 17:07:34,303 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-10 17:07:35,311 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-10 17:07:36,317 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-10 17:07:37,326 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-10 17:07:38,335 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-10 17:07:39,342 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-10 17:07:40,347 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-10 17:07:41,352 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-10 17:07:42,360 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-10 17:07:43,370 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-10 17:07:44,378 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-10 17:07:45,383 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-10 17:07:46,390 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-10 17:07:47,394 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-10 17:07:48,403 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-10 17:07:49,416 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-10 17:07:50,426 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-10 17:07:50,428 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-10 17:13:50,145 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 17:14:11,844 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 17:15:36,375 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 17:15:50,107 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:16:06,355 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:16:21,580 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:16:31,619 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:16:33,347 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:16:36,567 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:16:37,601 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:16:38,552 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:16:39,524 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:17:53,727 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:17:54,203 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:17:54,688 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:17:55,007 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:17:55,206 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:17:55,641 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:17:55,872 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:18:26,979 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:18:34,623 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-10 17:18:34,729 - src.molecules.router - INFO - 8 molecules retrieved successfully
+2024-09-10 17:18:43,072 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 4
+2024-09-10 17:18:43,083 - src.molecules.router - ERROR - Molecule with ID 4 not found
+2024-09-10 17:18:48,179 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 2
+2024-09-10 17:18:48,188 - src.molecules.router - ERROR - Molecule with ID 2 not found
+2024-09-10 17:18:51,600 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 3
+2024-09-10 17:18:51,604 - src.molecules.router - INFO - Molecule with ID 3 retrieved successfully
+2024-09-10 17:21:30,737 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:21:31,568 - src.molecules.router - INFO - Received request for substructure search results for task_id: 36401657-4e98-4c76-8f17-6d3c1bbf3491
+2024-09-10 17:38:20,577 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 17:38:29,719 - src.molecules.router - INFO - Received request for substructure search results for task_id: da1368cb-ea37-4df5-a665-106861f817f8
+2024-09-10 17:38:37,589 - src.molecules.router - INFO - Received request for substructure search results for task_id: da1368cb-ea37-4df5-a665-106861f817f8
+2024-09-10 17:38:40,156 - src.molecules.router - INFO - Received request for substructure search results for task_id: da1368cb-ea37-4df5-a665-106861f817f8
+2024-09-10 17:38:46,127 - src.molecules.router - INFO - Received request for substructure search results for task_id: da1368cb-ea37-4df5-a665-106861f817f8
+2024-09-10 17:42:35,962 - src.molecules.router - INFO - Received request for substructure search results for task_id: da1368cb-ea37-4df5-a665-106861f817f8
+2024-09-10 17:46:48,140 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 17:46:55,970 - src.molecules.router - INFO - Received request for substructure search results for task_id: de2f8542-631a-4e09-9283-558063991133
+2024-09-10 17:47:08,473 - src.molecules.router - INFO - Received request for substructure search results for task_id: de2f8542-631a-4e09-9283-558063991133
+2024-09-10 17:58:16,038 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-10 17:58:25,462 - src.molecules.router - INFO - Received request for substructure search results for task_id: ecd44563-555e-465e-a8f1-83c216213a75
+2024-09-10 17:58:31,800 - src.molecules.router - INFO - Received request for substructure search results for task_id: ecd44563-555e-465e-a8f1-83c216213a75
+2024-09-10 17:58:35,771 - src.molecules.router - INFO - Received request for substructure search results for task_id: ecd44563-555e-465e-a8f1-83c216213a75
+2024-09-10 17:58:40,319 - src.molecules.router - INFO - Received request for substructure search results for task_id: ecd44563-555e-465e-a8f1-83c216213a75
+2024-09-10 17:58:46,119 - src.molecules.router - INFO - Received request for substructure search results for task_id: ecd44563-555e-465e-a8f1-83c216213a75
+2024-09-10 17:59:09,482 - src.molecules.router - INFO - Received request for substructure search results for task_id: ecd44563-555e-465e-a8f1-83c216213a75
+2024-09-10 18:00:49,283 - src.molecules.router - INFO - Received request for substructure search results for task_id: ecd44563-555e-465e-a8f1-83c216213a75
+2024-09-10 18:00:50,186 - src.molecules.router - INFO - Received request for substructure search results for task_id: ecd44563-555e-465e-a8f1-83c216213a75
+2024-09-12 13:56:30,900 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-12 13:56:40,854 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCOkjajkaf
+2024-09-12 13:56:48,055 - src.molecules.router - INFO - Received request for substructure search results for task_id: 2b2fec5d-1bcb-42b0-a580-2e778833bf41
+2024-09-12 13:58:20,691 - src.molecules.router - INFO - Received request for substructure search results for task_id: 2b2fec5d-1bcb-42b0-a580-2e778833bf41
+2024-09-12 14:00:30,669 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-12 14:00:40,524 - src.molecules.router - INFO - Received request for substructure search results for task_id: 5e9c5f86-a141-463b-88c7-eddec3baf7f6
+2024-09-12 14:00:47,116 - src.molecules.router - INFO - Received request for substructure search results for task_id: 5e9c5f86-a141-463b-88c7-eddec3baf7f6
+2024-09-12 14:02:02,076 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-12 14:02:14,803 - src.molecules.router - INFO - Received request for substructure search results for task_id: a06610a6-3436-484f-85a7-c17347f755db
+2024-09-12 14:02:22,311 - src.molecules.router - INFO - Received request for substructure search results for task_id: a06610a6-3436-484f-85a7-c17347f755db
+2024-09-12 14:04:40,166 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-12 14:04:48,832 - src.molecules.router - INFO - Received request for substructure search results for task_id: 90635707-923c-4618-8ed7-c99c9999ec2c
+2024-09-12 14:04:54,005 - src.molecules.router - INFO - Received request for substructure search results for task_id: 90635707-923c-4618-8ed7-c99c9999ec2c
+2024-09-12 14:05:02,164 - src.molecules.router - INFO - Received request for substructure search results for task_id: 90635707-923c-4618-8ed7-c99c9999ec2c
+2024-09-12 14:05:03,947 - src.molecules.router - INFO - Received request for substructure search results for task_id: 90635707-923c-4618-8ed7-c99c9999ec2c
+2024-09-12 14:05:04,615 - src.molecules.router - INFO - Received request for substructure search results for task_id: 90635707-923c-4618-8ed7-c99c9999ec2c
+2024-09-12 14:05:05,048 - src.molecules.router - INFO - Received request for substructure search results for task_id: 90635707-923c-4618-8ed7-c99c9999ec2c
+2024-09-12 14:05:05,277 - src.molecules.router - INFO - Received request for substructure search results for task_id: 90635707-923c-4618-8ed7-c99c9999ec2c
+2024-09-12 14:05:05,390 - src.molecules.router - INFO - Received request for substructure search results for task_id: 90635707-923c-4618-8ed7-c99c9999ec2c
+2024-09-12 14:05:05,514 - src.molecules.router - INFO - Received request for substructure search results for task_id: 90635707-923c-4618-8ed7-c99c9999ec2c
+2024-09-12 14:05:05,630 - src.molecules.router - INFO - Received request for substructure search results for task_id: 90635707-923c-4618-8ed7-c99c9999ec2c
+2024-09-12 14:05:05,782 - src.molecules.router - INFO - Received request for substructure search results for task_id: 90635707-923c-4618-8ed7-c99c9999ec2c
+2024-09-12 14:05:05,933 - src.molecules.router - INFO - Received request for substructure search results for task_id: 90635707-923c-4618-8ed7-c99c9999ec2c
+2024-09-12 14:07:55,650 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-12 14:08:06,465 - src.molecules.router - INFO - Received request for substructure search results for task_id: fe8f940f-24ed-42e3-a1fe-7d70f693285d
+2024-09-12 14:09:00,354 - src.molecules.router - INFO - Received request for substructure search results for task_id: fe8f940f-24ed-42e3-a1fe-7d70f693285d
+2024-09-12 14:09:02,063 - src.molecules.router - INFO - Received request for substructure search results for task_id: fe8f940f-24ed-42e3-a1fe-7d70f693285d
+2024-09-12 14:09:04,000 - src.molecules.router - INFO - Received request for substructure search results for task_id: fe8f940f-24ed-42e3-a1fe-7d70f693285d
+2024-09-12 14:13:00,268 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-12 14:13:00,350 - src.molecules.router - INFO - 8 molecules retrieved successfully
+2024-09-12 14:13:08,691 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-12 14:13:18,031 - src.molecules.router - INFO - Received request for substructure search results for task_id: 81b4afe9-a0dd-4343-b3e3-c7a046d5b12d
+2024-09-12 14:13:19,440 - src.molecules.router - INFO - Received request for substructure search results for task_id: 81b4afe9-a0dd-4343-b3e3-c7a046d5b12d
+2024-09-12 14:13:21,282 - src.molecules.router - INFO - Received request for substructure search results for task_id: 81b4afe9-a0dd-4343-b3e3-c7a046d5b12d
+2024-09-12 14:13:22,714 - src.molecules.router - INFO - Received request for substructure search results for task_id: 81b4afe9-a0dd-4343-b3e3-c7a046d5b12d
+2024-09-12 14:14:03,263 - src.molecules.router - INFO - Received request for substructure search results for task_id: 81b4afe9-a0dd-4343-b3e3-c7a046d5b12d
+2024-09-12 14:14:04,100 - src.molecules.router - INFO - Received request for substructure search results for task_id: 81b4afe9-a0dd-4343-b3e3-c7a046d5b12d
+2024-09-12 14:14:04,723 - src.molecules.router - INFO - Received request for substructure search results for task_id: 81b4afe9-a0dd-4343-b3e3-c7a046d5b12d
+2024-09-12 14:17:23,057 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-12 14:17:27,464 - src.molecules.router - INFO - Received request to retrieve 2 molecules
+2024-09-12 14:17:27,573 - src.molecules.router - INFO - 2 molecules retrieved successfully
+2024-09-12 14:17:36,895 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-12 14:17:45,032 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:17:50,551 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:17:52,318 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:17:53,114 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:17:54,031 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:17:55,539 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:17:56,465 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:17:57,519 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:18:14,915 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:18:15,612 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:18:16,192 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:18:17,363 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:18:18,071 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:18:18,868 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:18:19,759 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:18:20,677 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:18:22,194 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:18:23,577 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:18:23,929 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:18:24,157 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:18:24,355 - src.molecules.router - INFO - Received request for substructure search results for task_id: e51c8d9e-ebe1-459e-aa8b-59e483e4d40f
+2024-09-12 14:43:56,944 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-12 14:44:03,690 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:05,244 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:05,533 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:05,785 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:05,932 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:06,066 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:06,184 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:06,333 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:06,466 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:06,616 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:06,783 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:08,357 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:08,499 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:08,753 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:08,900 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:09,017 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:09,166 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:13,306 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:44:13,483 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:49:24,505 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-12 14:49:34,065 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:49:49,772 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:49:51,444 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:49:52,039 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:49:52,437 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:49:52,734 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:49:54,938 - src.molecules.router - INFO - Received request for substructure search results for task_id: cf2947f6-66ea-4c30-8fb5-e11b910703f4
+2024-09-12 14:50:00,495 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:02,104 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:03,086 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:03,994 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:04,915 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:06,052 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:07,563 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:08,401 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:09,313 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:10,280 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:11,049 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:12,156 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:13,918 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:15,806 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:20,237 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:34,670 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:35,569 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:36,315 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:37,801 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:38,552 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:39,671 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:40,458 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:41,353 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:42,043 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:42,743 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:43,566 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:44,596 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:45,624 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:50:46,526 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:51:07,004 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:51:07,774 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:51:08,764 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:51:09,666 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:51:10,609 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:51:16,671 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:51:17,391 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:51:17,980 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:51:18,476 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:51:20,260 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:51:29,990 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:51:30,876 - src.molecules.router - INFO - Received request for substructure search results for task_id: 8eaf3178-57f2-4775-8b81-51dbec3b8733
+2024-09-12 14:51:38,959 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-12 14:51:45,637 - src.molecules.router - INFO - Received request for substructure search results for task_id: f6e0e5e0-861b-4833-bd4a-55f3e41b031c
+2024-09-12 14:51:48,263 - src.molecules.router - INFO - Received request for substructure search results for task_id: f6e0e5e0-861b-4833-bd4a-55f3e41b031c
+2024-09-12 14:51:49,670 - src.molecules.router - INFO - Received request for substructure search results for task_id: f6e0e5e0-861b-4833-bd4a-55f3e41b031c
+2024-09-12 14:51:50,797 - src.molecules.router - INFO - Received request for substructure search results for task_id: f6e0e5e0-861b-4833-bd4a-55f3e41b031c
+2024-09-12 14:51:51,691 - src.molecules.router - INFO - Received request for substructure search results for task_id: f6e0e5e0-861b-4833-bd4a-55f3e41b031c
+2024-09-12 14:52:06,321 - src.molecules.router - INFO - Received request for substructure search results for task_id: f6e0e5e0-861b-4833-bd4a-55f3e41b031c
+2024-09-12 14:52:10,389 - src.molecules.router - INFO - Received request for substructure search results for task_id: f6e0e5e0-861b-4833-bd4a-55f3e41b031c
+2024-09-12 14:52:11,207 - src.molecules.router - INFO - Received request for substructure search results for task_id: f6e0e5e0-861b-4833-bd4a-55f3e41b031c
+2024-09-12 14:52:15,635 - src.molecules.router - INFO - Received request for substructure search results for task_id: f6e0e5e0-861b-4833-bd4a-55f3e41b031c
+2024-09-12 14:52:16,626 - src.molecules.router - INFO - Received request for substructure search results for task_id: f6e0e5e0-861b-4833-bd4a-55f3e41b031c
+2024-09-12 14:52:17,612 - src.molecules.router - INFO - Received request for substructure search results for task_id: f6e0e5e0-861b-4833-bd4a-55f3e41b031c
+2024-09-12 14:53:03,162 - src.molecules.router - INFO - Received request for substructure search results for task_id: f6e0e5e0-861b-4833-bd4a-55f3e41b031c
+2024-09-12 14:53:04,099 - src.molecules.router - INFO - Received request for substructure search results for task_id: f6e0e5e0-861b-4833-bd4a-55f3e41b031c
+2024-09-12 14:53:39,062 - src.molecules.router - INFO - Received request for substructure search results for task_id: f6e0e5e0-861b-4833-bd4a-55f3e41b031c
+2024-09-12 15:33:30,635 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-12 15:33:30,733 - src.molecules.router - INFO - 8 molecules retrieved successfully
+2024-09-12 15:33:38,062 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-12 15:33:47,454 - src.molecules.router - INFO - Received request for substructure search results for task_id: 044a4019-b93c-4258-901d-2775a6b5778b
+2024-09-12 15:34:16,155 - src.molecules.router - INFO - Received request for substructure search results for task_id: 044a4019-b93c-4258-901d-2775a6b5778b
+2024-09-12 15:36:27,002 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-12 15:36:27,057 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-12 15:36:27,060 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-12 15:36:28,069 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-12 15:36:29,076 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-12 15:36:30,083 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-12 15:36:31,089 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-12 15:36:32,095 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-12 15:36:33,099 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-12 15:36:34,107 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-12 15:36:35,118 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-12 15:36:36,130 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-12 15:36:37,138 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-12 15:36:38,145 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-12 15:36:39,153 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-12 15:36:40,158 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-12 15:36:41,161 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-12 15:36:42,170 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-12 15:36:43,175 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-12 15:36:44,182 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-12 15:36:45,191 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-12 15:36:46,195 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-12 15:36:46,196 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-12 15:40:44,318 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-12 15:40:44,370 - src.molecules.router - INFO - 8 molecules retrieved successfully
+2024-09-12 17:19:14,712 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-12 17:19:14,769 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-12 17:19:14,771 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-12 17:19:15,779 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-12 17:19:16,784 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-12 17:19:17,791 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-12 17:19:18,796 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-12 17:19:19,804 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-12 17:19:20,807 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-12 17:19:21,817 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-12 17:19:22,822 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-12 17:19:23,833 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-12 17:19:24,875 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-12 17:19:25,882 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-12 17:19:26,893 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-12 17:19:27,898 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-12 17:19:28,908 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-12 17:19:29,916 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-12 17:19:30,925 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-12 17:19:31,935 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-12 17:19:32,945 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-12 17:19:33,955 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-12 17:19:33,958 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.

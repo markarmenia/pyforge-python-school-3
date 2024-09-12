@@ -9,6 +9,9 @@ class Settings(BaseSettings):
     DB_PASSWORD: str
     REDIS_HOST: str
     REDIS_PORT: int
+    POSTGRES_USER: str  
+    POSTGRES_PASSWORD: str  
+    POSTGRES_DB: str 
 
     model_config = SettingsConfigDict(
         env_file=os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".env")

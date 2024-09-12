@@ -1,12 +1,15 @@
-import logging
-from typing import List, Optional
 from fastapi import APIRouter, HTTPException, Query
+from typing import List, Optional
+from celery.result import AsyncResult
+from src.celery_worker import celery_app
+from src.tasks import substructure_search_task
 from rdkit import Chem
+import logging
+import json
 from src.molecules.dao import MoleculeDAO
 from src.molecules.schema import MoleculeResponse, MoleculeAdd, MoleculeUpdate
 from src.cache import redis_client
 from hashlib import sha256
-import json
 
 logger = logging.getLogger(__name__)
 
@@ -149,31 +152,43 @@ async def get_all(limit: Optional[int] = Query(None, description="Limit the numb
         raise HTTPException(status_code=500, detail="Error performing search")
     
 # Substructure search for all added molecules
-@router.get("/substructures", tags=["Search"], summary="Substructure search molecules", response_description="Substructure match molecules retrieved successfully")
-async def substructure_search(smiles: str):
-    '''
-    Substructure search
+# Endpoint to start the substructure search task
+@router.get("/substructures", tags=["Search"], summary="Start substructure search", response_description="Task started")
+async def start_substructure_search(smiles: str):
+    """
+    Start substructure search task.
 
     **substructure**: SMILES molecule required
-    '''
-    logger.info(f"Received request for substructure search with SMILES: {smiles}")
-    redis_client_instance = await redis_client()
-    cache_key = get_cache_key("substructure_search", smiles=smiles)
-    cached_results = await get_cache(redis_client_instance, cache_key)
-    if cached_results:
-        logger.info(f"Cache hit for key: {cache_key}")
-        return json.loads(cached_results)
-
-    
+    """
+    logger.info(f"Received request to start substructure search for SMILES: {smiles}")
     try:
-        matches = await MoleculeDAO.substructure_search(smiles)
-        if not matches:
-            logger.info("Substructure search found no matches")
-            await set_cache(redis_client_instance, cache_key, {"message": "No results found"}, expiration=300)
-            return {"message": "No results found"}
-        logger.info(f"Substructure search found {len(matches)} matches")
-        await set_cache(redis_client_instance, cache_key, matches, expiration=300)
-        return matches
-    except ValueError as e:
-        logger.error(f"ValueError during substructure search: {e}")
-        raise HTTPException(status_code=400, detail=str(e))
+        task = substructure_search_task.delay(smiles)  # Submit task to Celery
+        return {"task_id": task.id, "message": "Task started, use /substructures/{task_id} to get the results"}
+    except Exception as e:
+        logger.error(f"Error starting substructure search task: {e}")
+        raise HTTPException(status_code=500, detail="Error starting substructure search task")
+
+# Endpoint to get the substructure search results
+@router.get("/substructures/{task_id}", tags=["Search"], summary="Get substructure search results", response_description="Search results")
+async def get_substructure_search_results(task_id: str):
+    """
+    Get results of substructure search.
+
+    **task_id**: The task ID returned when the task was started
+    """
+    logger.info(f"Received request for substructure search results for task_id: {task_id}")
+    
+    task = AsyncResult(task_id, app=celery_app)
+    if task.state == 'PENDING':
+        # Task is still processing
+        return {"task_id": task_id, "status": "Task is still processing"}
+    elif task.state == 'SUCCESS':
+        # Task completed successfully
+        result = task.result
+        return {"task_id": task_id, "status": "Task completed", "result": result}
+    elif task.state == 'FAILURE':
+        # Task failed
+        return {"task_id": task_id, "status": "Task failed", "error": str(task.info)}
+    else:
+        # Unknown task state
+        return {"task_id": task_id, "status": "Unknown task state"}
