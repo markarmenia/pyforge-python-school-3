@@ -8,9 +8,6 @@ services:
       SERVER_ID: SERVER-1
       REDIS_HOST: redis
       REDIS_PORT: 6379
-      PYTHONPATH: /src
-    ports:
-      - "8000:8000"
 
   web2:
     build: ./src
@@ -20,9 +17,6 @@ services:
       SERVER_ID: SERVER-2
       REDIS_HOST: redis
       REDIS_PORT: 6379
-      PYTHONPATH: /src
-    ports:
-      - "8001:8000"
       
   nginx:
     image: nginx:latest
@@ -81,14 +75,13 @@ services:
   celery_worker:
     build: ./src
     command: celery -A celery_worker worker --loglevel=info
-    volumes:
-      - ./src:/src
+    depends_on:
+      - redis
     environment:
       REDIS_HOST: redis
       REDIS_PORT: 6379
-      PYTHONPATH: /src
-    depends_on:
-      - redis
+    volumes:
+      - ./src:/src
 
 volumes:
   pgdata:

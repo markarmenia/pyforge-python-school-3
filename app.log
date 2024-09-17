@@ -673,3 +673,507 @@ Retry limit exceeded while trying to reconnect to the Celery redis result store 
 Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
 
 2024-09-12 17:19:33,958 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-13 14:32:33,581 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-13 14:32:33,748 - src.molecules.router - ERROR - Unexpected error during search: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "molecules" does not exist
+[SQL: SELECT molecules.id, molecules.smiles 
+FROM molecules]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 514, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 760, in _prepare
+    prepared_stmt = await self._connection.prepare(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/asyncpg/connection.py", line 636, in prepare
+    return await self._prepare(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/asyncpg/connection.py", line 654, in _prepare
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/asyncpg/connection.py", line 433, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 166, in prepare
+asyncpg.exceptions.UndefinedTableError: relation "molecules" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedTableError'>: relation "molecules" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nshanyeghyan/Desktop/pyforge-python-school-3/src/molecules/router.py", line 146, in get_all
+    results = await MoleculeDAO.find_all_molecules(limit)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nshanyeghyan/Desktop/pyforge-python-school-3/src/molecules/dao.py", line 23, in find_all_molecules
+    result = await session.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2236, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "molecules" does not exist
+[SQL: SELECT molecules.id, molecules.smiles 
+FROM molecules]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-09-13 14:39:41,732 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-13 14:39:49,192 - src.molecules.router - ERROR - Unexpected error during search: role "admin" does not exist
+Traceback (most recent call last):
+  File "/Users/nshanyeghyan/Desktop/pyforge-python-school-3/src/molecules/router.py", line 146, in get_all
+    results = await MoleculeDAO.find_all_molecules(limit)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nshanyeghyan/Desktop/pyforge-python-school-3/src/molecules/dao.py", line 23, in find_all_molecules
+    result = await session.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2226, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2095, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3276, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3300, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 620, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 932, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/asyncpg/connection.py", line 2329, in connect
+    return await connect_utils._connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/asyncpg/connect_utils.py", line 991, in _connect
+    conn = await _connect_addr(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/asyncpg/connect_utils.py", line 828, in _connect_addr
+    return await __connect_addr(params, True, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/asyncpg/connect_utils.py", line 876, in __connect_addr
+    await connected
+asyncpg.exceptions.InvalidAuthorizationSpecificationError: role "admin" does not exist
+2024-09-13 14:45:40,277 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-13 14:45:40,412 - src.molecules.router - ERROR - Unexpected error during search: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "molecules" does not exist
+[SQL: SELECT molecules.id, molecules.smiles 
+FROM molecules]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 514, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 760, in _prepare
+    prepared_stmt = await self._connection.prepare(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/asyncpg/connection.py", line 636, in prepare
+    return await self._prepare(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/asyncpg/connection.py", line 654, in _prepare
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/asyncpg/connection.py", line 433, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 166, in prepare
+asyncpg.exceptions.UndefinedTableError: relation "molecules" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedTableError'>: relation "molecules" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nshanyeghyan/Desktop/pyforge-python-school-3/src/molecules/router.py", line 146, in get_all
+    results = await MoleculeDAO.find_all_molecules(limit)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nshanyeghyan/Desktop/pyforge-python-school-3/src/molecules/dao.py", line 23, in find_all_molecules
+    result = await session.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2236, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "molecules" does not exist
+[SQL: SELECT molecules.id, molecules.smiles 
+FROM molecules]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-09-13 14:51:57,355 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-13 14:51:57,436 - src.molecules.router - ERROR - Unexpected error during search: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "molecules" does not exist
+[SQL: SELECT molecules.id, molecules.smiles 
+FROM molecules]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 514, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 760, in _prepare
+    prepared_stmt = await self._connection.prepare(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/asyncpg/connection.py", line 636, in prepare
+    return await self._prepare(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/asyncpg/connection.py", line 654, in _prepare
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/asyncpg/connection.py", line 433, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 166, in prepare
+asyncpg.exceptions.UndefinedTableError: relation "molecules" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedTableError'>: relation "molecules" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nshanyeghyan/Desktop/pyforge-python-school-3/src/molecules/router.py", line 146, in get_all
+    results = await MoleculeDAO.find_all_molecules(limit)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nshanyeghyan/Desktop/pyforge-python-school-3/src/molecules/dao.py", line 23, in find_all_molecules
+    result = await session.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2236, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/opt/anaconda3/envs/my-rdkit-env/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "molecules" does not exist
+[SQL: SELECT molecules.id, molecules.smiles 
+FROM molecules]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-09-13 14:55:09,130 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-13 14:55:09,256 - src.molecules.router - INFO - 0 molecules retrieved successfully
+2024-09-13 14:57:49,774 - src.molecules.router - INFO - Received request to add molecule with SMILES: CCO
+2024-09-13 14:57:49,850 - src.molecules.router - INFO - Molecule added successfully with ID: 1
+2024-09-13 14:58:01,738 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 0
+2024-09-13 14:58:01,771 - src.molecules.router - ERROR - Molecule with ID 0 not found
+2024-09-13 14:58:09,009 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 1
+2024-09-13 14:58:09,030 - src.molecules.router - INFO - Molecule with ID 1 retrieved successfully
+2024-09-13 14:58:20,527 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-13 14:59:04,549 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-13 15:01:01,354 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-13 15:01:01,515 - src.molecules.router - INFO - 1 molecules retrieved successfully
+2024-09-13 15:01:20,498 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-13 15:02:02,547 - src.molecules.router - INFO - Received request to add molecule with SMILES: C#N
+2024-09-13 15:02:02,612 - src.molecules.router - INFO - Molecule added successfully with ID: 2
+2024-09-13 15:03:30,597 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-13 15:06:52,354 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-13 15:06:52,506 - src.molecules.router - INFO - 2 molecules retrieved successfully
+2024-09-13 15:08:33,953 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-13 15:08:44,382 - src.molecules.router - INFO - Received request for substructure search results for task_id: 2be28385-aae0-4b77-bba0-da85db82f80b
+2024-09-13 15:11:31,586 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-13 15:11:31,642 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-13 15:11:31,644 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-13 15:11:32,652 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-13 15:11:33,661 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-13 15:11:34,669 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-13 15:11:35,707 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-13 15:11:36,715 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-13 15:11:37,723 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-13 15:11:38,732 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-13 15:11:39,740 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-13 15:11:40,748 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-13 15:11:41,753 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-13 15:11:42,759 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-13 15:11:43,768 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-13 15:11:44,775 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-13 15:11:45,781 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-13 15:11:46,789 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-13 15:11:47,798 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-13 15:11:48,807 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-13 15:11:49,816 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-13 15:11:50,825 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-13 15:11:50,826 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-13 15:17:44,363 - src.molecules.router - INFO - Received request for substructure search results for task_id: 2be28385-aae0-4b77-bba0-da85db82f80b
+2024-09-13 15:17:55,056 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-13 15:18:03,078 - src.molecules.router - INFO - Received request for substructure search results for task_id: 2e90c5f6-a0ad-49ba-979f-1c6abba2a6cb
+2024-09-13 15:18:11,549 - src.molecules.router - INFO - Received request for substructure search results for task_id: 2e90c5f6-a0ad-49ba-979f-1c6abba2a6cb
+2024-09-13 15:21:58,383 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-13 15:21:58,437 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (0/20) now.
+2024-09-13 15:21:58,439 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (1/20) in 1.00 second.
+2024-09-13 15:21:59,456 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (2/20) in 1.00 second.
+2024-09-13 15:22:00,464 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (3/20) in 1.00 second.
+2024-09-13 15:22:01,468 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (4/20) in 1.00 second.
+2024-09-13 15:22:02,476 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (5/20) in 1.00 second.
+2024-09-13 15:22:03,484 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (6/20) in 1.00 second.
+2024-09-13 15:22:04,494 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (7/20) in 1.00 second.
+2024-09-13 15:22:05,503 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (8/20) in 1.00 second.
+2024-09-13 15:22:06,514 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (9/20) in 1.00 second.
+2024-09-13 15:22:07,524 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (10/20) in 1.00 second.
+2024-09-13 15:22:08,533 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (11/20) in 1.00 second.
+2024-09-13 15:22:09,541 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (12/20) in 1.00 second.
+2024-09-13 15:22:10,549 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (13/20) in 1.00 second.
+2024-09-13 15:22:11,558 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (14/20) in 1.00 second.
+2024-09-13 15:22:12,563 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (15/20) in 1.00 second.
+2024-09-13 15:22:13,573 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (16/20) in 1.00 second.
+2024-09-13 15:22:14,580 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (17/20) in 1.00 second.
+2024-09-13 15:22:15,588 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (18/20) in 1.00 second.
+2024-09-13 15:22:16,597 - celery.backends.redis - ERROR - Connection to Redis lost: Retry (19/20) in 1.00 second.
+2024-09-13 15:22:17,604 - celery.backends.redis - CRITICAL - 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+2024-09-13 15:22:17,606 - src.molecules.router - ERROR - Error starting substructure search task: Error 8 connecting to redis:6379. nodename nor servname provided, or not known.
+2024-09-13 15:58:35,453 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-13 15:58:35,558 - src.molecules.router - INFO - 2 molecules retrieved successfully
+2024-09-13 15:59:00,073 - src.molecules.router - INFO - Received request to start substructure search for SMILES: CCO
+2024-09-13 15:59:34,622 - src.molecules.router - INFO - Received request for substructure search results for task_id: 0aa6b491-8faf-4129-b07c-1ba242171a07
+2024-09-13 16:00:01,697 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-13 16:00:15,030 - src.molecules.router - INFO - Received request to add molecule with SMILES: CN
+2024-09-13 16:00:15,062 - src.molecules.router - INFO - Molecule added successfully with ID: 3
+2024-09-13 16:00:22,144 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393

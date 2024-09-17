@@ -4,8 +4,12 @@ from src.molecules.router import router as molecule_router
 from logging_config import setup_logging
 from src.cache import redis_client
 import redis.asyncio as redis
+from dotenv import load_dotenv
+
 
 setup_logging()
+
+load_dotenv()
 
 
 app = FastAPI()
@@ -20,7 +24,8 @@ async def health_check():
     try:
         await client.ping()
         return {"status": "healthy"}
-    except redis.RedisError:
+    except redis.RedisError as e:
+        print(f"Redis error: {e}")
         return {"status": "unhealthy"}, 503
     finally:
         await client.close()
