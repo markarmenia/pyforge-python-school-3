@@ -26,32 +26,33 @@ Here are some examples of SMILES notation:
 
 ## Examples of Substructure Search
 
-
 Below are some examples of substructure searches with visual representations:
 
 1. Searching for the Benzene Ring:
+
    - Substructure (Benzene): c1ccccc1
-   
+
    <img title="a title" alt="Alt text" src="./images/c1ccccc1.png">
-   
+
    - Example of Found Compound (Toluene): Cc1ccccc1
-   
+
    <img title="a title" alt="Alt text" src="./images/Cc1ccccc1.png">
-   
+
 2. Searching for a Carboxylic Acid Group:
+
    - Substructure (Carboxylic Acid): C(=O)O
-   
+
    <img title="a title" alt="Alt text" src="./images/C(=O)O.png">
-   
+
    - Example of Found Compound (Acetic Acid): CC(=O)O
-   
+
    <img title="a title" alt="Alt text" src="./images/CC(=O)O.png">
 
 These examples illustrate how substructure searches can be used to find compounds containing specific functional groups or structural motifs. By using SMILES notation and cheminformatics tools, researchers can efficiently identify and study compounds of interest.
 
 ## Homework
 
-Every week we will add tasks to the folder **hw**. 
+Every week we will add tasks to the folder **hw**.
 Delivery details are available in the **README.md** in the **hw**
 
 ## Roadmap
@@ -91,4 +92,4 @@ As part of our homeworks, we will try to build a web service for storing and sub
 <img title="a title" alt="Alt text" src="./images/8.png">
 
 - **Celery** to speed up queries
-<img title="a title" alt="Alt text" src="./images/9.png">
+  <img title="a title" alt="Alt text" src="./images/9.png">
