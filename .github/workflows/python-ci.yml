@@ -17,6 +17,9 @@ jobs:
       DB_NAME: smiles_db
       REDIS_HOST: localhost
       REDIS_PORT: "6379"
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: smiles_db
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
