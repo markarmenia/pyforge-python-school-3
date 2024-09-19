@@ -62,7 +62,7 @@ jobs:
             echo "Waiting for Postgres..."
             sleep 2
           done
-          until redis-cli ping; do
+          until curl -s http://localhost:6379; do
             echo "Waiting for Redis..."
             sleep 2
           done
