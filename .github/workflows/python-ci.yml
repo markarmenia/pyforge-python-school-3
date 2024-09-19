@@ -56,13 +56,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r src/requirements.txt
 
+      - name: Install redis-tools
+        run: sudo apt-get install -y redis-tools
+
       - name: Wait for services
         run: |
           until pg_isready -h localhost -p 5433 -U admin; do
             echo "Waiting for Postgres..."
             sleep 2
           done
-          until curl -s http://localhost:6379; do
+          until redis-cli -h localhost -p 6379 ping | grep -q "PONG"; do
             echo "Waiting for Redis..."
             sleep 2
           done
