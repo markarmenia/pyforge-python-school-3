@@ -1177,3 +1177,125 @@ Retry limit exceeded while trying to reconnect to the Celery redis result store 
 2024-09-13 16:00:15,030 - src.molecules.router - INFO - Received request to add molecule with SMILES: CN
 2024-09-13 16:00:15,062 - src.molecules.router - INFO - Molecule added successfully with ID: 3
 2024-09-13 16:00:22,144 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:23:12,725 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-19 15:23:12,840 - src.molecules.router - INFO - 3 molecules retrieved successfully
+2024-09-19 15:23:17,701 - src.molecules.router - INFO - Received request to retrieve 1 molecules
+2024-09-19 15:23:17,714 - src.molecules.router - INFO - 1 molecules retrieved successfully
+2024-09-19 15:23:32,749 - src.molecules.router - INFO - Received request to add molecule with SMILES: CN
+2024-09-19 15:23:32,826 - src.molecules.router - ERROR - HTTPException occurred: Molecule already exists
+2024-09-19 15:23:37,989 - src.molecules.router - INFO - Received request to add molecule with SMILES: CNN
+2024-09-19 15:23:38,015 - src.molecules.router - INFO - Molecule added successfully with ID: 5
+2024-09-19 15:23:44,600 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:24:02,101 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 3
+2024-09-19 15:24:02,117 - src.molecules.router - INFO - Molecule with ID 3 retrieved successfully
+2024-09-19 15:24:06,832 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 4
+2024-09-19 15:24:06,837 - src.molecules.router - ERROR - Molecule with ID 4 not found
+2024-09-19 15:24:24,137 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:24:35,538 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:26:22,635 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 4
+2024-09-19 15:26:22,661 - src.molecules.router - ERROR - Molecule with ID 4 not found
+2024-09-19 15:26:37,652 - src.molecules.router - INFO - Cache hit for key: 11a3399d4a8347df76ac7767dca5e1f327ca007ee44a78e961aea46ad21c9bf1
+2024-09-19 15:26:47,554 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:26:56,586 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:29:52,188 - src.molecules.router - INFO - Received request to add molecule with SMILES: CNO
+2024-09-19 15:29:52,301 - src.molecules.router - INFO - Molecule added successfully with ID: 6
+2024-09-19 15:29:52,305 - src.molecules.router - INFO - Cache deletion result for key 137b7ca0c324fe6d984dcdf3e180d845e49ee49c065d17a52f36b10aba091c5f: 0
+2024-09-19 15:30:08,841 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-19 15:30:08,865 - src.molecules.router - INFO - 5 molecules retrieved successfully
+2024-09-19 15:31:34,025 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:31:45,675 - src.molecules.router - INFO - Received request to add molecule with SMILES: CON
+2024-09-19 15:31:45,796 - src.molecules.router - INFO - Molecule added successfully with ID: 7
+2024-09-19 15:31:45,798 - src.molecules.router - INFO - Cache deletion result for key 137b7ca0c324fe6d984dcdf3e180d845e49ee49c065d17a52f36b10aba091c5f: 0
+2024-09-19 15:31:51,105 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:32:07,441 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:32:21,811 - src.molecules.router - INFO - Received request to update molecule with ID 4 with new data: CO
+2024-09-19 15:32:21,849 - src.molecules.router - WARNING - Molecule with ID 4 not found for update
+2024-09-19 15:32:21,849 - src.molecules.router - ERROR - HTTPException occurred during update: Molecule not found
+2024-09-19 15:32:26,472 - src.molecules.router - INFO - Received request to update molecule with ID 3 with new data: CO
+2024-09-19 15:32:26,489 - src.molecules.router - INFO - Molecule with ID 3 updated successfully
+2024-09-19 15:32:26,492 - src.molecules.router - INFO - Cache deletion result for list key 137b7ca0c324fe6d984dcdf3e180d845e49ee49c065d17a52f36b10aba091c5f: 0
+2024-09-19 15:32:34,061 - src.molecules.router - INFO - Received request to delete molecule with ID 3
+2024-09-19 15:32:34,077 - src.molecules.router - INFO - Molecule with ID 3 deleted successfully
+2024-09-19 15:32:34,079 - src.molecules.router - INFO - Cache deletion result for list key 137b7ca0c324fe6d984dcdf3e180d845e49ee49c065d17a52f36b10aba091c5f: 0
+2024-09-19 15:32:39,684 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:32:57,278 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:33:07,072 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:33:54,852 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:34:21,343 - src.molecules.router - INFO - Received request to delete molecule with ID 3
+2024-09-19 15:34:21,456 - src.molecules.router - ERROR - Molecule with ID 3 not found for deletion
+2024-09-19 15:34:29,951 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:39:42,329 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-19 15:39:42,414 - src.molecules.router - INFO - 5 molecules retrieved successfully
+2024-09-19 15:39:55,805 - src.molecules.router - INFO - Received request to retrieve 2 molecules
+2024-09-19 15:39:55,822 - src.molecules.router - INFO - 2 molecules retrieved successfully
+2024-09-19 15:39:59,457 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:40:10,843 - src.molecules.router - INFO - Received request to add molecule with SMILES: COO
+2024-09-19 15:40:10,899 - src.molecules.router - INFO - Molecule added successfully with ID: 8
+2024-09-19 15:40:10,901 - src.molecules.router - INFO - Molecule cache invalidated
+2024-09-19 15:40:17,264 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:40:35,169 - src.molecules.router - INFO - Cache hit for key: 7af3769c96cfcd9be05c4131ec63d1e842aae53d64d291968cb64d3d62b41393
+2024-09-19 15:43:49,824 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-19 15:43:49,915 - src.molecules.router - INFO - 6 molecules retrieved successfully
+2024-09-19 15:44:02,289 - src.molecules.router - INFO - Received request to add molecule with SMILES: CNNO
+2024-09-19 15:44:02,343 - src.molecules.router - INFO - Molecule added successfully with ID: 9
+2024-09-19 15:44:02,345 - src.molecules.router - INFO - Molecule cache invalidated
+2024-09-19 15:44:08,434 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-19 15:44:08,441 - src.molecules.router - INFO - 7 molecules retrieved successfully
+2024-09-19 15:44:33,540 - src.molecules.router - INFO - Received request to retrieve 3 molecules
+2024-09-19 15:44:33,563 - src.molecules.router - INFO - 3 molecules retrieved successfully
+2024-09-19 15:44:41,055 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 9
+2024-09-19 15:44:41,065 - src.molecules.router - INFO - Molecule with ID 9 retrieved successfully
+2024-09-19 15:44:53,504 - src.molecules.router - INFO - Received request to update molecule with ID 9 with new data: CNNON
+2024-09-19 15:44:53,542 - src.molecules.router - INFO - Molecule with ID 9 updated successfully
+2024-09-19 15:44:53,544 - src.molecules.router - INFO - Molecule cache invalidated
+2024-09-19 15:44:58,863 - src.molecules.router - INFO - Cache hit for key: 9859c1d171d5d7ba1e7aa85903c14092d599c3ea25c8d392d4bca1d4fc34e529
+2024-09-19 15:45:03,621 - src.molecules.router - INFO - Received request to retrieve 3 molecules
+2024-09-19 15:45:03,631 - src.molecules.router - INFO - 3 molecules retrieved successfully
+2024-09-19 15:45:09,083 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-19 15:45:09,088 - src.molecules.router - INFO - 7 molecules retrieved successfully
+2024-09-19 15:45:30,205 - src.molecules.router - INFO - Received request to delete molecule with ID 9
+2024-09-19 15:45:30,228 - src.molecules.router - INFO - Molecule with ID 9 deleted successfully
+2024-09-19 15:45:30,230 - src.molecules.router - INFO - Molecule cache invalidated
+2024-09-19 15:45:34,172 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-19 15:45:34,175 - src.molecules.router - INFO - 6 molecules retrieved successfully
+2024-09-19 15:45:46,077 - src.molecules.router - INFO - Received request to start substructure search for SMILES: COO
+2024-09-19 15:46:02,139 - src.molecules.router - INFO - Received request for substructure search results for task_id: ce2832ab-e534-4a00-9175-b55457d6777d
+2024-09-19 15:46:52,257 - src.molecules.router - INFO - Received request for substructure search results for task_id: ce2832ab-e534-4a00-9175-b55457d6777d
+2024-09-19 15:50:06,222 - src.molecules.router - INFO - Cache hit for key: get_all
+2024-09-19 15:50:18,689 - src.molecules.router - INFO - Received request to add molecule with SMILES: CNNO
+2024-09-19 15:50:18,808 - src.molecules.router - INFO - Molecule added successfully with ID: 10
+2024-09-19 15:50:18,810 - src.molecules.router - INFO - Molecule cache invalidated for both list and individual retrievals
+2024-09-19 15:50:23,769 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-19 15:50:23,779 - src.molecules.router - INFO - 7 molecules retrieved successfully
+2024-09-19 15:50:39,068 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 10
+2024-09-19 15:50:39,086 - src.molecules.router - INFO - Molecule with ID 10 retrieved successfully
+2024-09-19 15:50:50,825 - src.molecules.router - INFO - Received request to update molecule with ID 10 with new data: CNNON
+2024-09-19 15:50:50,860 - src.molecules.router - INFO - Molecule with ID 10 updated successfully
+2024-09-19 15:50:50,862 - src.molecules.router - INFO - Molecule cache invalidated for both list and individual retrievals
+2024-09-19 15:50:54,789 - src.molecules.router - INFO - Cache hit for key: 20b054b5994ea4ff43f36634a541ab33e8a76dc4bf4067016d230a3ea3602970
+2024-09-19 15:50:59,987 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-19 15:51:00,010 - src.molecules.router - INFO - 7 molecules retrieved successfully
+2024-09-19 15:51:10,091 - src.molecules.router - INFO - Cache hit for key: 20b054b5994ea4ff43f36634a541ab33e8a76dc4bf4067016d230a3ea3602970
+2024-09-19 15:51:20,702 - src.molecules.router - INFO - Cache hit for key: get_all
+2024-09-19 15:53:33,572 - src.molecules.router - INFO - Received request to add molecule with SMILES: CNNON
+2024-09-19 15:53:33,687 - src.molecules.router - ERROR - HTTPException occurred: Molecule already exists
+2024-09-19 15:53:39,498 - src.molecules.router - INFO - Received request to add molecule with SMILES: CNNO
+2024-09-19 15:53:39,507 - src.molecules.router - INFO - Molecule added successfully with ID: 12
+2024-09-19 15:53:39,513 - src.molecules.router - INFO - Molecule cache invalidated for both list and individual retrievals
+2024-09-19 15:53:52,257 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-19 15:53:52,271 - src.molecules.router - INFO - 8 molecules retrieved successfully
+2024-09-19 15:54:09,085 - src.molecules.router - INFO - Received request to delete molecule with ID 10
+2024-09-19 15:54:09,101 - src.molecules.router - INFO - Molecule with ID 10 deleted successfully
+2024-09-19 15:54:09,104 - src.molecules.router - INFO - Molecule cache invalidated for both list and individual retrievals
+2024-09-19 15:54:13,812 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-19 15:54:13,821 - src.molecules.router - INFO - 7 molecules retrieved successfully
+2024-09-19 15:54:26,763 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 10
+2024-09-19 15:54:26,768 - src.molecules.router - ERROR - Molecule with ID 10 not found
+2024-09-19 15:54:46,910 - src.molecules.router - INFO - Received request to update molecule with ID 12 with new data: CNNON
+2024-09-19 15:54:46,939 - src.molecules.router - INFO - Molecule with ID 12 updated successfully
+2024-09-19 15:54:46,947 - src.molecules.router - INFO - Molecule cache invalidated for both list and individual retrievals
+2024-09-19 15:54:54,775 - src.molecules.router - INFO - Received request to retrieve ALL molecules
+2024-09-19 15:54:54,784 - src.molecules.router - INFO - 7 molecules retrieved successfully
+2024-09-19 15:55:02,210 - src.molecules.router - INFO - Received request to retrieve molecule with ID: 12
+2024-09-19 15:55:02,220 - src.molecules.router - INFO - Molecule with ID 12 retrieved successfully
+2024-09-19 15:57:00,548 - src.molecules.router - INFO - Cache hit for key: molecule_by_id:12

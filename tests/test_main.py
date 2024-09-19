@@ -229,46 +229,30 @@ async def test_cache_usage_on_retreiving_all_molecules(mock_redis_client, mock_f
 
 @patch.object(MoleculeDAO, 'substructure_search', new_callable=AsyncMock)
 @patch("src.cache.redis_client")
+@patch("src.celery_worker.celery_app.send_task")  
 @pytest.mark.asyncio
-async def test_no_cache_usage_on_substructure_search(mock_redis_client, mock_substructure_search):
+async def test_no_cache_usage_on_substructure_search(mock_send_task, mock_redis_client, mock_substructure_search):
     mock_redis = mock_redis_client.return_value
-    mock_redis.get = AsyncMock(return_value=None)  
+    mock_redis.get = AsyncMock(return_value=None) 
     mock_redis.setex = AsyncMock()
     mock_redis.close = AsyncMock()
-    
-    mock_substructure_search.return_value = ["c1ccccc1"]
-    
-    response = client.get("/substructures", params={"smiles": "c1ccccc1"})
-    assert response.status_code == 200
-    assert response.json() == ["c1ccccc1"]
-    
-# Test 16 substructure_search in DB, with caching
 
-@patch.object(MoleculeDAO, 'substructure_search', new_callable=AsyncMock)
-@patch("src.cache.redis_client")
-@pytest.mark.asyncio
-async def test_cache_usage_on_substructure_search(mock_redis_client, mock_substructure_search):
-    
-    mock_redis = mock_redis_client.return_value
-    mock_redis.get = AsyncMock(return_value=json.dumps(["c1ccccc1"]))  
-    mock_redis.setex = AsyncMock()
-    mock_redis.close = AsyncMock()
-    
-    mock_substructure_search.return_value = ["c1ccccc1"]
-    
-    response = client.get("/substructures", params={"smiles": "c1ccccc1"})
-    assert response.status_code == 200
-    assert response.json() == ["c1ccccc1"]
-    
-    mock_substructure_search.assert_not_called()
+    mock_task = MagicMock()
+    mock_task.id = "1234"
+    mock_send_task.return_value = mock_task
 
     response = client.get("/substructures", params={"smiles": "c1ccccc1"})
-    assert response.status_code == 200
-    assert response.json() == ["c1ccccc1"]
-    
-    mock_substructure_search.assert_not_called()
 
-#Test 17 substructure search with invalid smiles
+    assert response.status_code == 200
+
+    assert response.json() == {
+        "task_id": "1234",
+        "message": "Task started, use /substructures/{task_id} to get the results"
+    }
+
+
+
+#Test 16 substructure search with invalid smiles
 @patch.object(MoleculeDAO, 'substructure_search', new_callable=AsyncMock)
 @pytest.mark.asyncio
 async def test_substructure_search_invalid_smiles(mock_substructure_search):
