@@ -53,4 +53,4 @@ ENV/
 env.bak/
 venv.bak/
 
-/Desktop/aws/ec2-ssh-key.pem
+ec2-ssh-key.pem
