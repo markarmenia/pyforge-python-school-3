@@ -20,12 +20,24 @@ jobs:
           ssh-keygen -y -f ec2-ssh-key.pem
 
       - name: Copy code to EC2 instance
-        run: |
-          scp -i ec2-ssh-key.pem -o StrictHostKeyChecking=no -r . ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/home/ubuntu/my-app
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
+          source: "."
+          target: "/home/ubuntu" # Ensure this path matches your app structure
+          debug: true # Enable debug mode
 
       - name: SSH into EC2 and Deploy Application
-        run: |
-          ssh -i ec2-ssh-key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
+          script: |
             cd /home/ubuntu/my-app
             # Update package list and install dependencies
             sudo apt-get update
@@ -33,7 +45,6 @@ jobs:
             pip3 install -r src/requirements.txt
             # Start the FastAPI application
             nohup uvicorn main:app --host 0.0.0.0 --port 8000 &
-          EOF
 
   test:
     runs-on: ubuntu-latest
