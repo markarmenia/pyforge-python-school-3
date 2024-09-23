@@ -20,14 +20,14 @@ jobs:
           ssh-keygen -y -f private_key.pem
 
       - name: Copy code to EC2 instance
-        uses: appleboy/scp-action@v0.1.0
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
           source: "."
-          target: "/home/ubuntu/my-app"
+          target: "/home/ubuntu"
           debug: true # Enable debug mode
 
       - name: SSH into EC2 and Deploy Application
