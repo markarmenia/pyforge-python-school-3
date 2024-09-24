@@ -50,8 +50,6 @@ jobs:
             source venv/bin/activate
             pip install -r src/requirements.txt
 
-            # Run Docker Compose to start the containers
-            docker-compose up -d
-
-            # Run Alembic migrations
-            docker-compose exec fastapi alembic upgrade head
+            # Run Docker Compose on EC2
+            sudo docker-compose up -d --build
+            alembic upgrade head
