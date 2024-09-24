@@ -1,95 +1,61 @@
-# Python Summer School 2024
+FastAPI Application Deployment Guide
+This guide explains the process of deploying the FastAPI application to an AWS EC2 instance using GitHub Actions for continuous deployment.
 
-## Substructure search
+Overview
+The deployment is automated using a GitHub Actions workflow that triggers on every push to the main branch. The workflow securely connects to an EC2 instance via SSH, syncs the application code, installs required dependencies, and starts the FastAPI application.
 
-Substructure search of chemical compounds is a crucial tool in cheminformatics, enabling researchers to identify and analyze chemical structures containing specific substructures. This method is widely applied in various fields of chemistry, including drug discovery, materials science, and environmental research. Substructure search helps scientists and engineers identify compounds with desired properties, predict reactivity, and understand the mechanisms of chemical reactions.
+Key Components
+GitHub Actions: Automates the deployment process triggered by code changes.
+AWS EC2: The application is hosted on an EC2 instance running Ubuntu.
+FastAPI: The core of the application, running as a backend API.
+Uvicorn: ASGI server for running FastAPI.
+rsync: Used to transfer files from GitHub to the EC2 instance over SSH.
+Prerequisites
+Before deploying, ensure you have the following:
 
-Modern chemical compound databases contain millions of entries, making traditional search methods inefficient and time-consuming. Substructure search utilizes algorithms that allow for quick and accurate identification of compounds with specified structural fragments. These algorithms are based on graph theory and the use of SMARTS (SMiles ARbitrary Target Specification) codes, ensuring high performance and precision in the search process.
+An EC2 instance running Ubuntu, with SSH access.
+SSH key pair configured and available as GitHub secrets.
+Python 3.7+ installed on the EC2 instance.
+Uvicorn installed as the ASGI server for the FastAPI app.
+Deployment Process
+The deployment is handled by a GitHub Actions workflow (deploy.yml). Below is a step-by-step explanation of what each part of the workflow does.
 
-## SMILES
+GitHub Actions Workflow (deploy.yml)
+The workflow is triggered on every push to the main branch. It consists of the following steps:
 
-A key element in the representation of chemical structures is the Simplified Molecular Input Line Entry System (SMILES). SMILES is a notation that allows a user to represent a chemical structure in a way that can be easily processed by computers. It encodes molecular structures as a series of text strings, which can then be used for various computational analyses, including substructure searches. The simplicity and efficiency of SMILES make it a widely adopted standard in cheminformatics.
+Checkout the Code: The actions/checkout@v4 action is used to fetch the latest version of the code from the repository.
 
-Here are some examples of SMILES notation:
+Install SSH Key: The ssh-key-action installs the private SSH key from GitHub secrets to securely access the EC2 instance.
 
-- Water (H₂O): O
+Add Known Hosts: This step ensures that the EC2 host is recognized, avoiding any Host verification failed errors during SSH connections.
 
-- Methane (CH₄): C
+Sync Files with EC2 Using rsync: The rsync command transfers the code from the GitHub repository to the EC2 instance. It excludes unnecessary files like .git, .github, and the SSH key itself.
 
-- Ethanol (C₂H₅OH): CCO
+Execute Remote Commands on EC2: This step runs a set of commands over SSH to configure and run the FastAPI app:
 
-- Benzene (C₆H₆): c1ccccc1
+Update the package list.
+Install python3-pip and any required Python packages.
+Start the FastAPI application using Uvicorn with the following command:
+bash
+Copy code
+nohup uvicorn main:app --host 0.0.0.0 --port 8000 &
 
-- Acetic acid (CH₃COOH): CC(=O)O
+Secrets
+To securely connect and deploy to your EC2 instance, the following secrets must be set in your GitHub repository:
 
-- Aspirin (C₉H₈O₄): CC(=O)Oc1ccccc1C(=O)O
+EC2_SSH_KEY: The private SSH key used to authenticate access to the EC2 instance.
+EC2_USER: The username used to connect to the EC2 instance (e.g., ubuntu).
+EC2_HOST: The public IP address or DNS of the EC2 instance.
+KNOWN_HOSTS: The public SSH host keys for the EC2 instance to avoid prompt confirmation during SSH connection.
+Running the Application
+After deployment, the application will be running and accessible via the public IP of the EC2 instance on port 8000:
 
-## Examples of Substructure Search
+http://ec2-44-223-106-249.compute-1.amazonaws.com:8000
 
-Below are some examples of substructure searches with visual representations:
+To check the logs or status of the running application, you can SSH into the EC2 instance and view the Uvicorn logs:
 
-1. Searching for the Benzene Ring:
+ssh ubuntu@<ec2-44-223-106-249.compute-1.amazonaws.com>
+tail -f nohup.out
 
-   - Substructure (Benzene): c1ccccc1
-
-   <img title="a title" alt="Alt text" src="./images/c1ccccc1.png">
-
-   - Example of Found Compound (Toluene): Cc1ccccc1
-
-   <img title="a title" alt="Alt text" src="./images/Cc1ccccc1.png">
-
-2. Searching for a Carboxylic Acid Group:
-
-   - Substructure (Carboxylic Acid): C(=O)O
-
-   <img title="a title" alt="Alt text" src="./images/C(=O)O.png">
-
-   - Example of Found Compound (Acetic Acid): CC(=O)O
-
-   <img title="a title" alt="Alt text" src="./images/CC(=O)O.png">
-
-These examples illustrate how substructure searches can be used to find compounds containing specific functional groups or structural motifs. By using SMILES notation and cheminformatics tools, researchers can efficiently identify and study compounds of interest.
-
-## Homework
-
-Every week we will add tasks to the folder **hw**.
-Delivery details are available in the **README.md** in the **hw**
-
-## Roadmap
-
-As part of our homeworks, we will try to build a web service for storing and substructural search of chemical compounds
-
-- Use the **RDKit** library to implement substructure search
-
-<img title="a title" alt="Alt text" src="./images/1.png">
-
-- Build RESTful API using **FastApi**
-
-<img title="a title" alt="Alt text" src="./images/2.png">
-
-- Containerizing our solution using **Docker**
-
-<img title="a title" alt="Alt text" src="./images/3.png">
-
-- Adding tests using **pytest**
-
-<img title="a title" alt="Alt text" src="./images/4.png">
-
-- **CI / CD**
-
-<img title="a title" alt="Alt text" src="./images/5.png">
-
-- We will add a **database** for storing molecules
-
-<img title="a title" alt="Alt text" src="./images/6.png">
-
-- **Logging**
-
-<img title="a title" alt="Alt text" src="./images/7.png">
-
-- We will add caching using **Redis** to optimize queries
-
-<img title="a title" alt="Alt text" src="./images/8.png">
-
-- **Celery** to speed up queries
-  <img title="a title" alt="Alt text" src="./images/9.png">
+Conclusion
+This automated deployment pipeline ensures that every push to the main branch results in an updated FastAPI application running on your AWS EC2 instance. The use of GitHub Actions simplifies the process by automating SSH connections, code synchronization, and application startup.
