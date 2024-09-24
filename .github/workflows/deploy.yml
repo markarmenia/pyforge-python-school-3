@@ -25,6 +25,10 @@ jobs:
       - name: Install rsync
         run: sudo apt-get install -y rsync
 
+      - name: Add EC2 Host to Known Hosts
+        run: |
+          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+
       - name: SSH into EC2 Instance and Install Docker and Docker Compose
         uses: appleboy/ssh-action@master
         with:
@@ -51,7 +55,7 @@ jobs:
             ./requirements.txt \
             ./.dockerignore \
             ./.env \
-            ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/home/ubuntu/app/
+            ubuntu@${{ secrets.EC2_HOST }}:/home/ubuntu/app/
 
       - name: Set Up Python Virtual Environment and Install Dependencies
         uses: appleboy/ssh-action@master
