@@ -51,5 +51,4 @@ jobs:
             pip install -r src/requirements.txt
 
             # Run Docker Compose on EC2
-            sudo docker-compose up -d --build
-            alembic upgrade head
+            docker-compose up -d
