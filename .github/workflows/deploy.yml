@@ -49,6 +49,6 @@ jobs:
             python3 -m venv venv
             source venv/bin/activate
             pip install -r src/requirements.txt
-
+            alembic upgrade head
             # Run Docker Compose on EC2
             docker-compose up -d
