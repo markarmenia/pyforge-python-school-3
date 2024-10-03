@@ -27,7 +27,7 @@ services:
       DB_USER: admin
       DB_PASSWORD: 1234
       DB_NAME: smiles_db
-      
+
   nginx:
     image: nginx:latest
     ports:
@@ -46,8 +46,11 @@ services:
       POSTGRES_PASSWORD: 1234
       POSTGRES_DB: smiles_db
       PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_DB_AIRFLOW: airflow
+      POSTGRES_USER_AIRFLOW: airflow
+      POSTGRES_PASSWORD_AIRFLOW: airflow
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data/pgdata
     deploy:
@@ -92,6 +95,66 @@ services:
       REDIS_PORT: 6379
     volumes:
       - ./src:/src
+
+  # Airflow Services
+  airflow-webserver:
+    image: my-airflow-image
+    container_name: airflow-webserver
+    command: ["webserver"]  # Add command to start the webserver
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://admin:1234@postgres/smiles_db
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://admin:1234@postgres/smiles_db
+      AIRFLOW__CORE__FERNET_KEY: ''
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - redis
+
+  airflow-scheduler:
+    image: my-airflow-image
+    container_name: airflow-scheduler
+    command: ["scheduler"]  # Add command to start the scheduler
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://admin:1234@postgres/smiles_db
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://admin:1234@postgres/smiles_db
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - redis
+      - airflow-webserver
+
+  airflow-init:
+    image: my-airflow-image
+    container_name: airflow-init
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://admin:1234@postgres/smiles_db
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://admin:1234@postgres/smiles_db
+    command: >
+      bash -c "
+        airflow db upgrade &&
+        if ! airflow users list | grep -q admin; then
+          airflow users create --username admin --password admin --firstname Admin --lastname Admin --role Admin --email admin@example.com
+        fi
+      "
+    depends_on:
+      - postgres
+
+
 
 volumes:
   pgdata:

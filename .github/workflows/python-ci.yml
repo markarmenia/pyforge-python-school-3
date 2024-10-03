@@ -17,7 +17,7 @@ jobs:
           POSTGRES_PASSWORD: 1234
           POSTGRES_DB: smiles_db
         ports:
-          - 5433:5432
+          - 5432:5432
         options: >-
           --health-cmd "pg_isready -U admin -d smiles_db"
           --health-interval 10s
@@ -34,7 +34,7 @@ jobs:
           --health-retries 3
     env:
       DB_HOST: localhost
-      DB_PORT: "5433"
+      DB_PORT: "5432"
       DB_USER: admin
       DB_PASSWORD: 1234
       DB_NAME: smiles_db
@@ -61,7 +61,7 @@ jobs:
 
       - name: Wait for services
         run: |
-          until pg_isready -h localhost -p 5433 -U admin; do
+          until pg_isready -h localhost -p 5432 -U admin; do
             echo "Waiting for Postgres..."
             sleep 2
           done

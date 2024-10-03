@@ -1,0 +1,25 @@
+# Use the official Airflow image as a base
+FROM apache/airflow:2.6.0
+
+# Install RDKit and other dependencies
+USER root
+RUN apt-get update && apt-get install -y \
+    libboost-all-dev \
+    cmake \
+    libpq-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Switch back to airflow user
+USER airflow
+
+# Install Python packages
+RUN pip install --no-cache-dir rdkit openpyxl pandas
+
+# Copy DAGs, logs, and plugins into the container
+COPY ./airflow/dags /opt/airflow/dags
+COPY ./airflow/logs /opt/airflow/logs
+COPY ./airflow/plugins /opt/airflow/plugins
+
+# Specify the entrypoint for the container
+ENTRYPOINT ["airflow"]
