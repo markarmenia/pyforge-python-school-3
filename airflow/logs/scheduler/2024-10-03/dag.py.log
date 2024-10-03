@@ -4891,3 +4891,367 @@ ImportError: cannot import name 'days_ago' from 'airflow.models' (/home/airflow/
 [2024-10-03T15:15:15.742+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:15:15.742+0000] {dag.py:2726} INFO - Sync 1 DAGs
 [2024-10-03T15:15:15.762+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:15:15.762+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
 [2024-10-03T15:15:15.772+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.628 seconds
+[2024-10-03T15:15:45.958+0000] {processor.py:156} INFO - Started process (PID=178) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:15:45.959+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:15:45.960+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:15:45.960+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:15:46.578+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:15:46.588+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:15:46.588+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:15:46.602+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:15:46.602+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:15:46.611+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.661 seconds
+[2024-10-03T15:16:17.087+0000] {processor.py:156} INFO - Started process (PID=191) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:16:17.089+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:16:17.090+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:16:17.089+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:16:17.760+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:16:17.770+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:16:17.770+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:16:17.785+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:16:17.784+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:16:17.793+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.715 seconds
+[2024-10-03T15:16:48.348+0000] {processor.py:156} INFO - Started process (PID=204) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:16:48.351+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:16:48.352+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:16:48.352+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:16:48.938+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:16:48.948+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:16:48.947+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:16:48.962+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:16:48.962+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:16:48.971+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.630 seconds
+[2024-10-03T15:17:19.237+0000] {processor.py:156} INFO - Started process (PID=217) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:17:19.239+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:17:19.241+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:17:19.241+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:17:19.916+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:17:19.927+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:17:19.926+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:17:19.942+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:17:19.942+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:17:19.951+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.720 seconds
+[2024-10-03T15:17:50.367+0000] {processor.py:156} INFO - Started process (PID=230) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:17:50.369+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:17:50.370+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:17:50.370+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:17:50.903+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:17:50.914+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:17:50.914+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:17:50.928+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:17:50.928+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:17:50.938+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.578 seconds
+[2024-10-03T15:18:21.056+0000] {processor.py:156} INFO - Started process (PID=243) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:18:21.058+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:18:21.059+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:18:21.059+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:18:21.676+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:18:21.686+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:18:21.686+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:18:21.699+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:18:21.699+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:18:21.708+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.660 seconds
+[2024-10-03T15:18:52.220+0000] {processor.py:156} INFO - Started process (PID=256) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:18:52.221+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:18:52.222+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:18:52.222+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:18:52.748+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:18:52.758+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:18:52.758+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:18:52.771+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:18:52.771+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:18:52.781+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.571 seconds
+[2024-10-03T15:19:23.086+0000] {processor.py:156} INFO - Started process (PID=269) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:19:23.091+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:19:23.093+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:19:23.093+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:19:23.629+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:19:23.639+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:19:23.638+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:19:23.653+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:19:23.653+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:19:23.661+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.582 seconds
+[2024-10-03T15:19:54.170+0000] {processor.py:156} INFO - Started process (PID=282) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:19:54.172+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:19:54.173+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:19:54.173+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:19:54.710+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:19:54.720+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:19:54.720+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:19:54.735+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:19:54.735+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:19:54.744+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.583 seconds
+[2024-10-03T15:20:24.984+0000] {processor.py:156} INFO - Started process (PID=295) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:20:24.986+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:20:24.987+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:20:24.987+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:20:25.536+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:20:25.547+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:20:25.547+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:20:25.562+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:20:25.562+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:20:25.579+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.601 seconds
+[2024-10-03T15:20:56.029+0000] {processor.py:156} INFO - Started process (PID=308) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:20:56.031+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:20:56.032+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:20:56.032+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:20:56.576+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:20:56.599+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:20:56.599+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:20:56.614+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:20:56.614+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:20:56.623+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.601 seconds
+[2024-10-03T15:21:27.055+0000] {processor.py:156} INFO - Started process (PID=321) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:21:27.057+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:21:27.058+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:21:27.058+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:21:27.569+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:21:27.582+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:21:27.582+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:21:27.597+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:21:27.597+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:21:27.606+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.557 seconds
+[2024-10-03T15:21:57.959+0000] {processor.py:156} INFO - Started process (PID=334) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:21:57.962+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:21:57.963+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:21:57.963+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:21:58.528+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:21:58.539+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:21:58.538+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:21:58.553+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:21:58.553+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:21:58.562+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.610 seconds
+[2024-10-03T15:22:29.004+0000] {processor.py:156} INFO - Started process (PID=347) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:22:29.006+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:22:29.007+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:22:29.007+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:22:29.550+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:22:29.560+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:22:29.560+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:22:29.574+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:22:29.574+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:22:29.582+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.587 seconds
+[2024-10-03T15:22:59.968+0000] {processor.py:156} INFO - Started process (PID=360) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:22:59.971+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:22:59.972+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:22:59.972+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:23:00.562+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:23:00.573+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:23:00.573+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:23:00.587+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:23:00.587+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:23:00.596+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.635 seconds
+[2024-10-03T15:23:30.925+0000] {processor.py:156} INFO - Started process (PID=373) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:23:30.927+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:23:30.928+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:23:30.928+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:23:31.469+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:23:31.480+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:23:31.480+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:23:31.493+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:23:31.493+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:23:31.502+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.583 seconds
+[2024-10-03T15:24:01.919+0000] {processor.py:156} INFO - Started process (PID=386) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:24:01.921+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:24:01.923+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:24:01.922+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:24:02.463+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:24:02.472+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:24:02.472+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:24:02.486+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:24:02.486+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:24:02.494+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.583 seconds
+[2024-10-03T15:24:32.623+0000] {processor.py:156} INFO - Started process (PID=399) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:24:32.625+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:24:32.626+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:24:32.626+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:24:33.162+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:24:33.173+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:24:33.172+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:24:33.203+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:24:33.203+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:24:33.218+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.602 seconds
+[2024-10-03T15:25:03.621+0000] {processor.py:156} INFO - Started process (PID=412) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:25:03.625+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:25:03.627+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:25:03.627+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:25:04.166+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:25:04.175+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:25:04.175+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:25:04.192+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:25:04.192+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:25:04.201+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.600 seconds
+[2024-10-03T15:25:34.634+0000] {processor.py:156} INFO - Started process (PID=425) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:25:34.635+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:25:34.636+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:25:34.636+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:25:35.149+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:25:35.159+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:25:35.159+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:25:35.173+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:25:35.173+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:25:35.182+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.554 seconds
+[2024-10-03T15:26:05.628+0000] {processor.py:156} INFO - Started process (PID=438) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:26:05.631+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:26:05.633+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:26:05.633+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:26:06.177+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:26:06.187+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:26:06.187+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:26:06.201+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:26:06.201+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:26:06.210+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.601 seconds
+[2024-10-03T15:26:36.572+0000] {processor.py:156} INFO - Started process (PID=451) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:26:36.576+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:26:36.578+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:26:36.578+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:26:37.155+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:26:37.166+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:26:37.165+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:26:37.179+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:26:37.179+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:26:37.188+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.624 seconds
+[2024-10-03T15:27:07.714+0000] {processor.py:156} INFO - Started process (PID=464) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:27:07.717+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:27:07.718+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:27:07.718+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:27:08.236+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:27:08.245+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:27:08.245+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:27:08.259+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:27:08.259+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:27:08.268+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.565 seconds
+[2024-10-03T15:27:38.459+0000] {processor.py:156} INFO - Started process (PID=477) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:27:38.462+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:27:38.463+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:27:38.463+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:27:39.032+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:27:39.041+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:27:39.041+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:27:39.055+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:27:39.055+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:27:39.064+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.613 seconds
+[2024-10-03T15:28:09.531+0000] {processor.py:156} INFO - Started process (PID=490) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:28:09.533+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:28:09.534+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:28:09.533+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:28:10.063+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:28:10.077+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:28:10.076+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:28:10.099+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:28:10.099+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:28:10.108+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.593 seconds
+[2024-10-03T15:28:40.518+0000] {processor.py:156} INFO - Started process (PID=503) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:28:40.520+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:28:40.522+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:28:40.521+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:28:41.109+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:28:41.119+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:28:41.119+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:28:41.134+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:28:41.134+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:28:41.143+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.633 seconds
+[2024-10-03T15:29:11.649+0000] {processor.py:156} INFO - Started process (PID=516) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:29:11.651+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:29:11.652+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:29:11.652+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:29:12.240+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:29:12.251+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:29:12.250+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:29:12.264+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:29:12.264+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:29:12.272+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.631 seconds
+[2024-10-03T15:29:42.698+0000] {processor.py:156} INFO - Started process (PID=529) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:29:42.702+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:29:42.703+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:29:42.703+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:29:43.299+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:29:43.309+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:29:43.309+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:29:43.338+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:29:43.338+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:29:43.347+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.657 seconds
+[2024-10-03T15:30:13.690+0000] {processor.py:156} INFO - Started process (PID=542) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:30:13.692+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:30:13.693+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:30:13.693+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:30:14.227+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:30:14.236+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:30:14.236+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:30:14.250+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:30:14.250+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:30:14.259+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.577 seconds
+[2024-10-03T15:30:44.662+0000] {processor.py:156} INFO - Started process (PID=555) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:30:44.665+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:30:44.666+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:30:44.666+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:30:45.218+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:30:45.228+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:30:45.227+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:30:45.242+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:30:45.241+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:30:45.251+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.597 seconds
+[2024-10-03T15:31:15.397+0000] {processor.py:156} INFO - Started process (PID=568) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:31:15.398+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:31:15.399+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:31:15.399+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:31:15.900+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:31:15.912+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:31:15.911+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:31:15.926+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:31:15.925+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:31:15.935+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.545 seconds
+[2024-10-03T15:31:46.358+0000] {processor.py:156} INFO - Started process (PID=581) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:31:46.361+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:31:46.362+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:31:46.362+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:31:46.925+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:31:46.935+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:31:46.934+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:31:46.948+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:31:46.948+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:31:46.957+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.611 seconds
+[2024-10-03T15:32:17.124+0000] {processor.py:156} INFO - Started process (PID=594) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:32:17.131+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:32:17.135+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:32:17.135+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:32:17.681+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:32:17.692+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:32:17.692+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:32:17.706+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:32:17.705+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:32:17.714+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.608 seconds
+[2024-10-03T15:32:48.214+0000] {processor.py:156} INFO - Started process (PID=607) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:32:48.216+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:32:48.217+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:32:48.216+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:32:48.849+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:32:48.864+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:32:48.863+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:32:48.878+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:32:48.878+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:32:48.889+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.680 seconds
+[2024-10-03T15:33:19.472+0000] {processor.py:156} INFO - Started process (PID=620) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:33:19.474+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:33:19.475+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:33:19.475+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:33:20.014+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:33:20.025+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:33:20.025+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:33:20.039+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:33:20.039+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:33:20.048+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.587 seconds
+[2024-10-03T15:33:50.508+0000] {processor.py:156} INFO - Started process (PID=633) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:33:50.511+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:33:50.512+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:33:50.511+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:33:51.034+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:33:51.044+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:33:51.043+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:33:51.057+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:33:51.057+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:33:51.066+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.568 seconds
+[2024-10-03T15:34:21.187+0000] {processor.py:156} INFO - Started process (PID=646) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:34:21.191+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:34:21.192+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:34:21.192+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:34:21.720+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:34:21.729+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:34:21.729+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:34:21.743+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:34:21.743+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:34:21.752+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.573 seconds
+[2024-10-03T15:34:52.146+0000] {processor.py:156} INFO - Started process (PID=659) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:34:52.148+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:34:52.149+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:34:52.149+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:34:52.707+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:34:52.721+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:34:52.721+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:34:52.751+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:34:52.751+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:34:52.760+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.622 seconds
+[2024-10-03T15:35:23.106+0000] {processor.py:156} INFO - Started process (PID=672) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:35:23.108+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:35:23.109+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:35:23.109+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:35:23.641+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:35:23.653+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:35:23.652+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:35:23.666+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:35:23.666+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:35:23.675+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.574 seconds
+[2024-10-03T15:35:54.068+0000] {processor.py:156} INFO - Started process (PID=685) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:35:54.071+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:35:54.072+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:35:54.072+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:35:54.625+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:35:54.635+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:35:54.635+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:35:54.650+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:35:54.650+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:35:54.659+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.608 seconds
+[2024-10-03T15:36:24.808+0000] {processor.py:156} INFO - Started process (PID=698) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:36:24.811+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:36:24.812+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:36:24.812+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:36:25.366+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:36:25.377+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:36:25.376+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:36:25.404+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:36:25.404+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:36:25.414+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.622 seconds
+[2024-10-03T15:36:55.662+0000] {processor.py:156} INFO - Started process (PID=711) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:36:55.664+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:36:55.665+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:36:55.665+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:36:56.458+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:36:56.480+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:36:56.479+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:36:56.499+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:36:56.499+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:36:56.516+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.861 seconds
+[2024-10-03T15:37:27.038+0000] {processor.py:156} INFO - Started process (PID=724) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:37:27.047+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:37:27.048+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:37:27.048+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:37:27.631+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:37:27.642+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:37:27.642+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:37:27.667+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:37:27.667+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:37:27.676+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.659 seconds
+[2024-10-03T15:37:58.113+0000] {processor.py:156} INFO - Started process (PID=737) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:37:58.116+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:37:58.116+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:37:58.116+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:37:59.075+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:37:59.121+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:37:59.120+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:37:59.142+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:37:59.142+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:37:59.153+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 1.046 seconds
+[2024-10-03T15:38:29.540+0000] {processor.py:156} INFO - Started process (PID=750) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:38:29.541+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:38:29.542+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:38:29.542+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:38:30.372+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:38:30.398+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:38:30.397+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:38:30.428+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:38:30.428+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:38:30.446+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.913 seconds
+[2024-10-03T15:39:01.114+0000] {processor.py:156} INFO - Started process (PID=763) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:39:01.115+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:39:01.116+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:39:01.116+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:39:01.676+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:39:01.689+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:39:01.688+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:39:01.718+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:39:01.718+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:39:01.736+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.628 seconds
+[2024-10-03T15:39:32.121+0000] {processor.py:156} INFO - Started process (PID=776) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:39:32.127+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:39:32.132+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:39:32.131+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:39:33.105+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:39:33.137+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:39:33.136+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:39:33.160+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:39:33.160+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:39:33.210+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 1.105 seconds
+[2024-10-03T15:40:04.180+0000] {processor.py:156} INFO - Started process (PID=789) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:40:04.189+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:40:04.194+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:40:04.194+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:40:06.699+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:40:06.722+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:40:06.721+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:40:06.759+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:40:06.759+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:40:06.777+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 2.631 seconds
+[2024-10-03T15:40:37.199+0000] {processor.py:156} INFO - Started process (PID=802) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:40:37.201+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:40:37.203+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:40:37.202+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:40:37.958+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:40:37.982+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:40:37.982+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:40:38.015+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:40:38.015+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:40:38.038+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.848 seconds
+[2024-10-03T15:41:08.587+0000] {processor.py:156} INFO - Started process (PID=815) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:41:08.589+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:41:08.590+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:41:08.590+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:41:09.430+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:41:09.495+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:41:09.494+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:41:09.519+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:41:09.519+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:41:09.531+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.951 seconds
+[2024-10-03T15:41:39.954+0000] {processor.py:156} INFO - Started process (PID=828) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:41:39.956+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:41:39.957+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:41:39.957+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:41:40.548+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:41:40.563+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:41:40.563+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:41:40.580+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:41:40.579+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:41:40.590+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.642 seconds
+[2024-10-03T15:42:10.712+0000] {processor.py:156} INFO - Started process (PID=841) to work on /opt/airflow/dags/dag.py
+[2024-10-03T15:42:10.715+0000] {processor.py:799} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-03T15:42:10.716+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:42:10.716+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-03T15:42:11.501+0000] {processor.py:809} INFO - DAG(s) dict_keys(['smiles_to_s3']) retrieved from /opt/airflow/dags/dag.py
+[2024-10-03T15:42:11.513+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:42:11.512+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2024-10-03T15:42:11.528+0000] {logging_mixin.py:149} INFO - [2024-10-03T15:42:11.528+0000] {dag.py:3490} INFO - Setting next_dagrun for smiles_to_s3 to 2024-10-03T00:00:00+00:00, run_after=2024-10-04T00:00:00+00:00
+[2024-10-03T15:42:11.539+0000] {processor.py:178} INFO - Processing /opt/airflow/dags/dag.py took 0.835 seconds
